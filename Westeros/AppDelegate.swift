@@ -14,8 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions:
+        [UIApplicationLaunchOptionsKey:Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Se crea un Window
+        // Se le indica a la pantalla que haga un frame que ocupe toda la pantalla
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.backgroundColor = UIColor.orange
+        
+        // Se crea un RootVC
+        let rootVC = UIViewController()
+        window?.rootViewController = rootVC
+        
+        
         return true
     }
 
