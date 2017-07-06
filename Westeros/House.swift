@@ -13,14 +13,21 @@ import UIKit
 // MARK: - typealias
 typealias Words = String
 
+// Se crea un conjunto de personas
+typealias Members = Set<Person>
+
 // MARK: - Classes
 final class House{
     let name    : String
     let sigil   : Sigil
     let words   : Words
     
+    private var _members : Members
+    
+    
     init(name : String, sigil : Sigil, words : Words) {
         (self.name, self.sigil, self.words) = (name, sigil, words)
+        _members = Members()
     }
 }
 
@@ -32,4 +39,23 @@ final class Sigil{
         (self.image, self.description) = (image, description)
     }
     
+}
+
+// MARK: - Extensión
+extension House{
+
+    // Extension de propiedad
+    var count : Int{
+        return _members.count
+    }
+    
+    // Extension de método
+    func add(person: Person) {
+        
+        guard person.house.name == name else {
+            return
+        }
+        
+        _members.insert(person)
+    }
 }

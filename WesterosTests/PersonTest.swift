@@ -13,8 +13,10 @@ class PersonTest: XCTestCase {
     
     // "!" significa que puede contener algo o nil
     // Se declara fuera de setUp para que sea variable global
-    var starkHouse : House!
-    var starkSigil : Sigil!
+    var starkHouse  : House!
+    var starkSigil  : Sigil!
+    var ned         : Person!
+    
     
     override func setUp() {
         super.setUp()
@@ -22,6 +24,7 @@ class PersonTest: XCTestCase {
         
         starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
         starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        ned = Person(name: "Eddard", house: starkHouse)
         
     }
     
@@ -33,5 +36,9 @@ class PersonTest: XCTestCase {
     func testPersonExistence() {
         let ned = Person(name : "Eddard", alias : "Ned", house: starkHouse)
         XCTAssertNotNil(ned)
+    }
+    
+    func testFullName() {
+        XCTAssertEqual(ned.fullName, "Eddard Stark")
     }
 }

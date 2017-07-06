@@ -96,9 +96,9 @@
 		261AA5611F0C47E400B97DBB /* WesterosTests */ = {
 			isa = PBXGroup;
 			children = (
-				262E73341F0ECAB200262208 /* PersonTest.swift */,
-				262E732A1F0EC0F900262208 /* HouseTest.swift */,
 				261AA5641F0C47E400B97DBB /* Info.plist */,
+				262E732A1F0EC0F900262208 /* HouseTest.swift */,
+				262E73341F0ECAB200262208 /* PersonTest.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -106,8 +106,8 @@
 		262E732E1F0EC24100262208 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				262E73361F0ECD5600262208 /* Person.swift */,
 				262E732C1F0EC23900262208 /* House.swift */,
+				262E73361F0ECD5600262208 /* Person.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

@@ -26,13 +26,41 @@ final class Person{
     }
     
     // Inicializador designado
-    init(name: String, alias: String, house: House) {
+    init(name: String, alias: String?, house: House) {
         (self.name, _alias, self.house) = (name, alias, house)
     }
     
-    init(name: String, house: House) {
-        self.name   = name
-        self.house  = house
-        _alias      = nil
+    // Inicializador de conveniencia sin extender la clase
+    convenience init(name: String, house: House) {
+        self.init(name: name, alias: nil, house: house)
+    }
+}
+
+
+// MARK: - Extensiones
+extension Person{
+    var fullName : String{
+        get{
+            return  "\(name) \(house.name)"
+        }
+    }
+}
+
+extension Person {
+    var proxy : String {
+        return "\(name) \(alias) \(house.name)"
+    }
+}
+extension Person : Hashable {
+    var hashValue: Int {
+        get{
+            return proxy.hashValue
+        }
+    }
+}
+
+extension Person : Equatable {
+    static func ==(lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxy == rhs.proxy
     }
 }
