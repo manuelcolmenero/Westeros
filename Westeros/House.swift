@@ -73,7 +73,7 @@ extension House{
     // Extension de método
     func addMinorHouse(house: House) {
         
-        guard (house.name, house.sigil.description, house.words) == (name, sigil.description, words) else {
+        guard house.proxy != self.proxy else {
             return
         }
         
