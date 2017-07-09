@@ -27,7 +27,7 @@ class HouseTest: XCTestCase {
     var arya            : Person!
     var tyrion          : Person!
     
-    var arrayHouses: Array<House>!
+//    var arrayHouses: Array<House>!
     
     override func setUp() {
         super.setUp()
@@ -48,7 +48,7 @@ class HouseTest: XCTestCase {
         arya = Person(name: "Arya", house: starkHouse)
         tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
         
-        arrayHouses = Array.init()
+//        arrayHouses = Array.init()
     }
     
     override func tearDown() {
@@ -82,16 +82,13 @@ class HouseTest: XCTestCase {
         XCTAssertEqual(starkHouse.count, 2)
     }
     
-    func testAddHouseToArray() {
-        XCTAssertEqual(arrayHouses.count, 0)
-        arrayHouses.append(starkHouse)
+    func testAddMinorHouse() {
+        XCTAssertEqual(starkHouse.countMinorHouse, 0)
+        starkHouse.addMinorHouse(house: mormontHouse)
         
-        XCTAssertEqual(arrayHouses.count, 1)
-        arrayHouses.append(lannisterHouse)
+        XCTAssertEqual(starkHouse.countMinorHouse, 1)
+        starkHouse.addMinorHouse(house: mormontHouse)
         
-        XCTAssertEqual(arrayHouses.count, 2)
-        arrayHouses.append(starkHouse)
-        
-        XCTAssertEqual(arrayHouses.count, 3)
+        XCTAssertEqual(starkHouse.countMinorHouse, 1)
     }
 }

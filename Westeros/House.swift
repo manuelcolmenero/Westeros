@@ -16,6 +16,9 @@ typealias Words = String
 // Se crea un conjunto de personas
 typealias Members = Set<Person>
 
+// Se crea un conjunto de personas
+typealias MinorHouse = Set<House>
+
 // MARK: - Classes
 final class House{
     let name    : String
@@ -23,10 +26,12 @@ final class House{
     let words   : Words
     
     private var _members : Members
+    private var _minorHouses : MinorHouse
     
     init(name : String, sigil : Sigil, words : Words) {
         (self.name, self.sigil, self.words) = (name, sigil, words)
         _members = Members()
+        _minorHouses = MinorHouse()
     }
 }
 
@@ -56,6 +61,23 @@ extension House{
         }
         
         _members.insert(person)
+    }
+    
+    // Parte Minor House para guardar House en House
+    
+    // Extension de propiedad
+    var countMinorHouse : Int{
+        return _minorHouses.count
+    }
+    
+    // Extension de método
+    func addMinorHouse(house: House) {
+        
+        guard (house.name, house.sigil.description, house.words) == (name, sigil.description, words) else {
+            return
+        }
+        
+        _minorHouses.insert(house)
     }
 }
 
