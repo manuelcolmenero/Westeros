@@ -24,7 +24,6 @@ final class House{
     
     private var _members : Members
     
-    
     init(name : String, sigil : Sigil, words : Words) {
         (self.name, self.sigil, self.words) = (name, sigil, words)
         _members = Members()
@@ -57,5 +56,34 @@ extension House{
         }
         
         _members.insert(person)
+    }
+}
+
+extension House {
+    var proxy: String {
+        get {
+            return "\(name) \(sigil.description) \(words)"
+        }
+    }
+}
+
+extension House: Hashable {
+    var hashValue: Int {
+        get {
+            return proxy.hashValue
+        }
+    }
+}
+
+extension House: Equatable {
+    static func ==(lhs: House, rhs: House) -> Bool {
+        return lhs.proxy == rhs.proxy
+    }
+}
+
+
+extension House: Comparable {
+    static func <(lhs: House, rhs: House) -> Bool {
+        return lhs.proxy < rhs.proxy
     }
 }
