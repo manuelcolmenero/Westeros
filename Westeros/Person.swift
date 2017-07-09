@@ -64,3 +64,9 @@ extension Person : Equatable {
         return lhs.proxy == rhs.proxy
     }
 }
+
+extension Person: Comparable {
+    static func <(lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxy < rhs.proxy
+    }
+}
