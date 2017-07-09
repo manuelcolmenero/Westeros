@@ -34,7 +34,6 @@ class PersonTest: XCTestCase {
     }
     
     func testPersonExistence() {
-        let ned = Person(name : "Eddard", alias : "Ned", house: starkHouse)
         XCTAssertNotNil(ned)
     }
     

@@ -13,33 +13,42 @@ class HouseTest: XCTestCase {
     
     var starkImage      : UIImage!
     var lannisterImage  : UIImage!
+    var mormontImage    : UIImage!
     
     var starkSigil      : Sigil!
     var lannisterSigil  : Sigil!
+    var mormontSigil    : Sigil!
     
     var starkHouse      : House!
     var lannisterHouse  : House!
-    
+    var mormontHouse    : House!
     
     var robb            : Person!
     var arya            : Person!
     var tyrion          : Person!
+    
+//    var arrayHouses: Array<House>!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         starkImage = #imageLiteral(resourceName: "codeIsComing.png")
         lannisterImage = #imageLiteral(resourceName: "lannister.jpg")
+        mormontImage = #imageLiteral(resourceName: "mormotSigil.png")
         
         starkSigil = Sigil(image: starkImage, description: "Direwolf")
         lannisterSigil = Sigil(image: lannisterImage, description: "Rampant lion")
-        
+        mormontSigil = Sigil(image: mormontImage, description: "Rampant bear")
+
         starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
         lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        mormontHouse = House(name: "Mormont", sigil: mormontSigil, words: "Here we stand!")
         
         robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
         tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        
+//        arrayHouses = Array.init()
     }
     
     override func tearDown() {
@@ -49,20 +58,14 @@ class HouseTest: XCTestCase {
     
     // Caso de test para comprobar que "House" existe y es usable
     func testHouseExistence() {
-        
-        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        let stark = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-        
         // Se comprueba que no sea nil
-        XCTAssertNotNil(stark)
+        XCTAssertNotNil(starkHouse)
         
     }
     
     func testSigilExistence() {
-        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
         XCTAssertNotNil(starkSigil)
         
-        let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant lion")
         XCTAssertNotNil(lannisterSigil)
     }
     
@@ -77,9 +80,15 @@ class HouseTest: XCTestCase {
         
         starkHouse.add(person: tyrion)
         XCTAssertEqual(starkHouse.count, 2)
-        
-        
-        
     }
     
+    func testAddMinorHouse() {
+        XCTAssertEqual(starkHouse.countMinorHouse, 0)
+        starkHouse.addMinorHouse(house: mormontHouse)
+        
+        XCTAssertEqual(starkHouse.countMinorHouse, 1)
+        starkHouse.addMinorHouse(house: mormontHouse)
+        
+        XCTAssertEqual(starkHouse.countMinorHouse, 1)
+    }
 }

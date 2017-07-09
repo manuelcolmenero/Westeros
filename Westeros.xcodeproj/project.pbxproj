@@ -16,6 +16,7 @@
 		262E73321F0EC87700262208 /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 262E73301F0EC87700262208 /* lannister.jpg */; };
 		262E73351F0ECAB200262208 /* PersonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E73341F0ECAB200262208 /* PersonTest.swift */; };
 		262E73371F0ECD5600262208 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E73361F0ECD5600262208 /* Person.swift */; };
+		2676AAB61F10D6AD00AEAB18 /* mormotSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 2676AAB51F10D6AD00AEAB18 /* mormotSigil.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		262E73301F0EC87700262208 /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
 		262E73341F0ECAB200262208 /* PersonTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTest.swift; sourceTree = "<group>"; };
 		262E73361F0ECD5600262208 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		2676AAB51F10D6AD00AEAB18 /* mormotSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mormotSigil.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				262E732F1F0EC87700262208 /* codeIsComing.png */,
+				2676AAB51F10D6AD00AEAB18 /* mormotSigil.png */,
 				262E73301F0EC87700262208 /* lannister.jpg */,
 			);
 			name = Resources;
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				262E73321F0EC87700262208 /* lannister.jpg in Resources */,
+				2676AAB61F10D6AD00AEAB18 /* mormotSigil.png in Resources */,
 				262E73311F0EC87700262208 /* codeIsComing.png in Resources */,
 				261AA5581F0C47E400B97DBB /* LaunchScreen.storyboard in Resources */,
 				261AA5551F0C47E400B97DBB /* Assets.xcassets in Resources */,
