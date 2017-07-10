@@ -26,14 +26,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.orange
         
         // Se crea un modelo
-        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming")
+        //let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
+        //let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming")
+        
+        //let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant lion")
+        //let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        
+        let mormontSigil = Sigil(image: #imageLiteral(resourceName: "mormotSigil.png"), description: "Rampant bear")
+        let mormontHouse = House(name: "Mormont", sigil: mormontSigil, words: "Here we stand!")
         
         // Se crea un controlador
-        let starkVC = HouseViewController(model: starkHouse)
+        //let starkVC = HouseViewController(model: starkHouse)
+        //let lannisterkVC = HouseViewController(model: lannisterHouse)
+        let mormontkVC = HouseViewController(model: mormontHouse)
         
         // Se asigna el RootVC
-        window?.rootViewController = starkVC
+        //window?.rootViewController = starkVC
+        //window?.rootViewController = lannisterkVC
+        window?.rootViewController = mormontkVC
         
         
         return true
