@@ -51,6 +51,8 @@ extension Person {
         return "\(name) \(alias) \(house.name)"
     }
 }
+
+// MART_ - Hashable
 extension Person : Hashable {
     var hashValue: Int {
         get{
@@ -59,12 +61,14 @@ extension Person : Hashable {
     }
 }
 
+// MART_ - Equatable
 extension Person : Equatable {
     static func ==(lhs: Person, rhs: Person) -> Bool {
         return lhs.proxy == rhs.proxy
     }
 }
 
+// MART_ - Comparable
 extension Person: Comparable {
     static func <(lhs: Person, rhs: Person) -> Bool {
         return lhs.proxy < rhs.proxy
