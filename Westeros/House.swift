@@ -16,7 +16,7 @@ typealias Words = String
 // Se crea un conjunto de personas
 typealias Members = Set<Person>
 
-// Se crea un conjunto de personas
+// Se crea un conjunto de casas menores
 typealias MinorHouse = Set<House>
 
 // MARK: - Classes
@@ -73,7 +73,7 @@ extension House{
     // Extension de método
     func addMinorHouse(house: House) {
         
-        guard house.proxy != self.proxy else {
+        guard house.proxyForEquality != self.proxyForEquality else {
             return
         }
         
@@ -82,30 +82,42 @@ extension House{
 }
 
 extension House {
-    var proxy: String {
+    
+    // Variable para igualdad de objetos
+    var proxyForEquality: String {
         get {
-            return "\(name) \(sigil.description) \(words)"
+            return "\(name) \(words) \(count)"
+        }
+    }
+    
+    
+    // Variable para ordenar objetos
+    var proxyForComparison: String {
+        get {
+            return name.uppercased()
         }
     }
 }
 
+// MART_ - Hashable
 extension House: Hashable {
     var hashValue: Int {
         get {
-            return proxy.hashValue
+            return proxyForEquality.hashValue
         }
     }
 }
 
+// MART_ - Equatable
 extension House: Equatable {
     static func ==(lhs: House, rhs: House) -> Bool {
-        return lhs.proxy == rhs.proxy
+        return lhs.proxyForEquality == rhs.proxyForEquality
     }
 }
 
-
+// MART_ - Comparable
 extension House: Comparable {
     static func <(lhs: House, rhs: House) -> Bool {
-        return lhs.proxy < rhs.proxy
+        return lhs.proxyForComparison < rhs.proxyForComparison
     }
 }

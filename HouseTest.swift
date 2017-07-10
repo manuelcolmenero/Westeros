@@ -91,4 +91,29 @@ class HouseTest: XCTestCase {
         
         XCTAssertEqual(starkHouse.countMinorHouse, 1)
     }
+    
+    func testEquality() {
+        // Identidad
+        XCTAssertEqual(starkHouse, starkHouse)
+        
+        // Igualdad
+        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        
+        XCTAssertEqual(jinxed, starkHouse)
+        
+        // Desigualdad
+        XCTAssertNotEqual(starkHouse, lannisterHouse)
+        
+    }
+    
+    func testHashable() {
+        // hashValue se utiliza para representar ese objeto en un árbol binario
+        // y poder meterlo dentro de un "Set"
+        XCTAssertNotNil(starkHouse.hashValue)
+    }
+    
+    func testHouseComparison() {
+        // Se comprueba si un objeto es mayor que otro
+        XCTAssertLessThan(lannisterHouse, starkHouse)
+    }
 }
