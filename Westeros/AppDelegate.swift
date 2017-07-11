@@ -25,24 +25,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.orange
         
-        // Se crean los modelos
-        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming")
-        
-        let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant lion")
-        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
-        
-        let mormontSigil = Sigil(image: #imageLiteral(resourceName: "mormotSigil.png"), description: "Rampant bear")
-        let mormontHouse = House(name: "Mormont", sigil: mormontSigil, words: "Here we stand!")
+        // Se obtienen los modelos
+        let houses = Repository.local.houses
         
         // Se crean los controladores
-        let starkVC = HouseViewController(model: starkHouse)
-        let lannisterkVC = HouseViewController(model: lannisterHouse)
-        let mormontkVC = HouseViewController(model: mormontHouse)
+        var controllers = [HouseViewController]()
+        for house in houses {
+            controllers.append(HouseViewController(model: house))
+        }
+        
+        // Se crean los NavigationControllers
+        var navs = [UINavigationController]()
+        for controller in controllers{
+            navs.append(UINavigationController(rootViewController: controller))
+        }
 
         // Se crea el UITabBarController
         let tabVC = UITabBarController()
-        tabVC.viewControllers = [lannisterkVC.wrappedInNavigation(), mormontkVC.wrappedInNavigation(), starkVC.wrappedInNavigation()]
+        tabVC.viewControllers = navs
         
         // Se asigna el RootVC
         window?.rootViewController = tabVC
