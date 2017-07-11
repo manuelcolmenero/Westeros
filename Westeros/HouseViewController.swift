@@ -27,9 +27,12 @@ class HouseViewController: UIViewController {
         
         // Se llama al inicializador de Super
         super.init(nibName: nil, bundle: nil)
+        
+        // Se informa el titulo de la vista
+        title = model.name
     }
     
-    // Chapuza de Cupertino (relacionado con los nil)
+    // Chapuza de Cupertino (relacionada con los nil)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
