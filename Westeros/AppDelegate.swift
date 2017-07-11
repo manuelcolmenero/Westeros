@@ -39,15 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let starkVC = HouseViewController(model: starkHouse)
         let lannisterkVC = HouseViewController(model: lannisterHouse)
         let mormontkVC = HouseViewController(model: mormontHouse)
-        
-        // Se crea el combinador
-        let tabVC   = UITabBarController()
-        tabVC.viewControllers = [lannisterkVC, mormontkVC, starkVC]
+
+        // Se crea el UITabBarController
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = [lannisterkVC.wrappedInNavigation(), mormontkVC.wrappedInNavigation(), starkVC.wrappedInNavigation()]
         
         // Se asigna el RootVC
-        //window?.rootViewController = starkVC
-        //window?.rootViewController = lannisterkVC
-        //window?.rootViewController = mormontkVC
         window?.rootViewController = tabVC
         
         
