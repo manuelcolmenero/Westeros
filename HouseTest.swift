@@ -10,17 +10,24 @@ import XCTest
 @testable import Westeros
 
 class HouseTest: XCTestCase {
-    // Se obtienen los modelos
-    let houses = Repository.local.houses
     
-    var starkHouse      = [House!]()
-    var lannisterHouse  = [House!]()
-    var mormontHouse    = [House!]()
-    
+    // Houses
+    var starkHouse      : House!
+    var lannisterHouse  : House!
+    var mormontHouse    : House!
+    var targaryenHouse  : House!
+    var greyjoyHouse    : House!
+    var tyrellHouse     : House!
+
+    // Sigils
     var starkSigil      : Sigil!
     var lannisterSigil  : Sigil!
     var mormontSigil    : Sigil!
-    
+    var targaryenSigil  : Sigil!
+    var greyjoySigil    : Sigil!
+    var tyrellSigil     : Sigil!
+
+    // Characters
     var robb            = [Person!]()
     var arya            = [Person!]()
     var tyrion          = [Person!]()
@@ -31,19 +38,25 @@ class HouseTest: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        starkHouse      = houses.filter { ($0.name == "Stark") }
-        lannisterHouse  = houses.filter { ($0.name == "Lannister") }
-        mormontHouse    = houses.filter { ($0.name == "Mormont") }
+        starkHouse      = Repository.local.house(named: "Stark")
+        lannisterHouse  = Repository.local.house(named: "Lannister")
+        mormontHouse    = Repository.local.house(named: "Mormont")
+        targaryenHouse  = Repository.local.house(named: "Targaryen")
+        greyjoyHouse    = Repository.local.house(named: "Greyjoy")
+        tyrellHouse     = Repository.local.house(named: "Tyrell")
         
-        starkSigil      = starkHouse[0].sigil
-        lannisterSigil  = lannisterHouse[0].sigil
-        mormontSigil    = mormontHouse[0].sigil
+        starkSigil      = starkHouse.sigil
+        lannisterSigil  = lannisterHouse.sigil
+        mormontSigil    = mormontHouse.sigil
+        targaryenSigil  = targaryenHouse.sigil
+        greyjoySigil    = greyjoyHouse.sigil
+        tyrellSigil     = tyrellHouse.sigil
       
-        robb    = starkHouse[0].members.filter( { ($0.name == "Roob") })
-        arya    = starkHouse[0].members.filter( { ($0.name == "Arya") })
-        tyrion  = lannisterHouse[0].members.filter( { ($0.name == "Tyrion") })
+        robb    = starkHouse.members.filter( { ($0.name == "Robb") })
+        arya    = starkHouse.members.filter( { ($0.name == "Arya") })
         
-//        arrayHouses = Array.init()
+        tyrion  = lannisterHouse.members.filter( { ($0.name == "Tyrion") })
+        
     }
     
     override func tearDown() {
@@ -54,7 +67,7 @@ class HouseTest: XCTestCase {
     // Caso de test para comprobar que "House" existe y es usable
     func testHouseExistence() {
         // Se comprueba que no sea nil
-        XCTAssertNotNil(starkHouse[0])
+        XCTAssertNotNil(starkHouse)
         
     }
     
@@ -78,37 +91,37 @@ class HouseTest: XCTestCase {
 //    }
     
     func testAddMinorHouse() {
-        XCTAssertEqual(starkHouse[0].countMinorHouse, 0)
-        starkHouse[0].addMinorHouse(house: mormontHouse[0])
+        XCTAssertEqual(starkHouse.countMinorHouse, 0)
+        starkHouse.addMinorHouse(house: mormontHouse)
         
-        XCTAssertEqual(starkHouse[0].countMinorHouse, 1)
-        starkHouse[0].addMinorHouse(house: mormontHouse[0])
+        XCTAssertEqual(starkHouse.countMinorHouse, 1)
+        starkHouse.addMinorHouse(house: mormontHouse)
         
-        XCTAssertEqual(starkHouse[0].countMinorHouse, 1)
+        XCTAssertEqual(starkHouse.countMinorHouse, 1)
     }
     
     func testEquality() {
         // Identidad
-        XCTAssertEqual(starkHouse[0], starkHouse[0])
+        XCTAssertEqual(starkHouse, starkHouse)
         
         // Igualdad
-        let jinxed = starkHouse[0]
+        let jinxed = starkHouse
         
-        XCTAssertEqual(jinxed, starkHouse[0])
+        XCTAssertEqual(jinxed, starkHouse)
         
         // Desigualdad
-        XCTAssertNotEqual(starkHouse[0], lannisterHouse[0])
+        XCTAssertNotEqual(starkHouse, lannisterHouse)
         
     }
     
     func testHashable() {
         // hashValue se utiliza para representar ese objeto en un árbol binario
         // y poder meterlo dentro de un "Set"
-        XCTAssertNotNil(starkHouse[0].hashValue)
+        XCTAssertNotNil(starkHouse.hashValue)
     }
     
     func testHouseComparison() {
         // Se comprueba si un objeto es mayor que otro
-        XCTAssertLessThan(lannisterHouse[0], starkHouse[0])
+        XCTAssertLessThan(lannisterHouse, starkHouse)
     }
 }
