@@ -66,7 +66,8 @@ final class LocalFactory : HouseFactory {
             // ---- Lannister ----
             let tyrion  = Person(name: "Tyrion", alias: "The Imp", house: lannister)
             let jaime   = Person(name: "Jaime", alias: "KingSlayer", house: lannister)
-            let cersei   = Person(name: "Cersei", house: lannister)
+            let cersei  = Person(name: "Cersei", house: lannister)
+            let lancel  = Person(name: "Lancel", house: lannister)
             
             // ---- Mormont ----
             let lyanna  = Person(name: "Lyanna", house: mormont)
@@ -98,6 +99,7 @@ final class LocalFactory : HouseFactory {
             lannister.add(person: tyrion)
             lannister.add(person: jaime)
             lannister.add(person: cersei)
+            lannister.add(person: lancel)
             
             // ---- Mormont ----
             mormont.add(person: lyanna)

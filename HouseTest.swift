@@ -31,6 +31,7 @@ class HouseTest: XCTestCase {
     var robb            = [Person!]()
     var arya            = [Person!]()
     var tyrion          = [Person!]()
+    var newStark        : Person!
     
 //    var arrayHouses: Array<House>!
     
@@ -56,6 +57,8 @@ class HouseTest: XCTestCase {
         arya    = starkHouse.members.filter( { ($0.name == "Arya") })
         
         tyrion  = lannisterHouse.members.filter( { ($0.name == "Tyrion") })
+    
+        newStark = Person(name: "New", house: starkHouse)
         
     }
     
@@ -77,18 +80,22 @@ class HouseTest: XCTestCase {
         XCTAssertNotNil(lannisterSigil)
     }
     
-//    func testAddPersons(){
-//        XCTAssertEqual(starkHouse[0].count, 0)
-//        starkHouse[0].add(person: robb[0])
-//        
-//        XCTAssertEqual(starkHouse[0].count, 1)
-//        starkHouse[0].add(person: arya[0])
-//        
-//        XCTAssertEqual(starkHouse[0].count, 2)
-//        
-//        starkHouse[0].add(person: tyrion[0])
-//        XCTAssertEqual(starkHouse[0].count, 2)
-//    }
+    func testAddPersons(){
+        // Se verifica cuantas Person hay en starkHouse
+        XCTAssertEqual(starkHouse.count, 5)
+        
+        // Se añade una nueva persona y se verifica que que se ha incluido
+        starkHouse.add(person: newStark)
+        XCTAssertEqual(starkHouse.count, 6)
+        
+        // Se añade intenta añadir una persona que ya está dada de alta y se verifica que no la incluye
+        starkHouse.add(person: arya[0])
+        XCTAssertEqual(starkHouse.count, 6)
+        
+        // Se añade intenta añadir una persona que no es de Stark y se verifica que no la incluye
+        starkHouse.add(person: tyrion[0])
+        XCTAssertEqual(starkHouse.count, 6)
+    }
     
     func testAddMinorHouse() {
         XCTAssertEqual(starkHouse.countMinorHouse, 0)
