@@ -25,12 +25,12 @@ final class House{
     let sigil   : Sigil
     let words   : Words
     
-    private var _members : Members
+    var members : Members
     private var _minorHouses : MinorHouse
     
     init(name : String, sigil : Sigil, words : Words) {
         (self.name, self.sigil, self.words) = (name, sigil, words)
-        _members = Members()
+        members = Members()
         _minorHouses = MinorHouse()
     }
 }
@@ -50,7 +50,7 @@ extension House{
 
     // Extension de propiedad
     var count : Int{
-        return _members.count
+        return members.count
     }
     
     // Extension de método
@@ -60,7 +60,7 @@ extension House{
             return
         }
         
-        _members.insert(person)
+        members.insert(person)
     }
     
     // Parte Minor House para guardar House en House

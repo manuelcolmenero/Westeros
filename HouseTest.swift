@@ -11,44 +11,55 @@ import XCTest
 
 class HouseTest: XCTestCase {
     
-    var starkImage      : UIImage!
-    var lannisterImage  : UIImage!
-    var mormontImage    : UIImage!
-    
-    var starkSigil      : Sigil!
-    var lannisterSigil  : Sigil!
-    var mormontSigil    : Sigil!
-    
+    // Houses
     var starkHouse      : House!
     var lannisterHouse  : House!
     var mormontHouse    : House!
-    
-    var robb            : Person!
-    var arya            : Person!
-    var tyrion          : Person!
+    var targaryenHouse  : House!
+    var greyjoyHouse    : House!
+    var tyrellHouse     : House!
+
+    // Sigils
+    var starkSigil      : Sigil!
+    var lannisterSigil  : Sigil!
+    var mormontSigil    : Sigil!
+    var targaryenSigil  : Sigil!
+    var greyjoySigil    : Sigil!
+    var tyrellSigil     : Sigil!
+
+    // Characters
+    var robb            = [Person!]()
+    var arya            = [Person!]()
+    var tyrion          = [Person!]()
+    var newStark        : Person!
     
 //    var arrayHouses: Array<House>!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        starkImage = #imageLiteral(resourceName: "codeIsComing.png")
-        lannisterImage = #imageLiteral(resourceName: "lannister.jpg")
-        mormontImage = #imageLiteral(resourceName: "mormotSigil.png")
         
-        starkSigil = Sigil(image: starkImage, description: "Direwolf")
-        lannisterSigil = Sigil(image: lannisterImage, description: "Rampant lion")
-        mormontSigil = Sigil(image: mormontImage, description: "Rampant bear")
-
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
-        mormontHouse = House(name: "Mormont", sigil: mormontSigil, words: "Here we stand!")
+        starkHouse      = Repository.local.house(named: "Stark")
+        lannisterHouse  = Repository.local.house(named: "Lannister")
+        mormontHouse    = Repository.local.house(named: "Mormont")
+        targaryenHouse  = Repository.local.house(named: "Targaryen")
+        greyjoyHouse    = Repository.local.house(named: "Greyjoy")
+        tyrellHouse     = Repository.local.house(named: "Tyrell")
         
-        robb = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
-        arya = Person(name: "Arya", house: starkHouse)
-        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        starkSigil      = starkHouse.sigil
+        lannisterSigil  = lannisterHouse.sigil
+        mormontSigil    = mormontHouse.sigil
+        targaryenSigil  = targaryenHouse.sigil
+        greyjoySigil    = greyjoyHouse.sigil
+        tyrellSigil     = tyrellHouse.sigil
+      
+        robb    = starkHouse.members.filter( { ($0.name == "Robb") })
+        arya    = starkHouse.members.filter( { ($0.name == "Arya") })
         
-//        arrayHouses = Array.init()
+        tyrion  = lannisterHouse.members.filter( { ($0.name == "Tyrion") })
+    
+        newStark = Person(name: "New", house: starkHouse)
+        
     }
     
     override func tearDown() {
@@ -70,16 +81,20 @@ class HouseTest: XCTestCase {
     }
     
     func testAddPersons(){
-        XCTAssertEqual(starkHouse.count, 0)
-        starkHouse.add(person: robb)
+        // Se verifica cuantas Person hay en starkHouse
+        XCTAssertEqual(starkHouse.count, 5)
         
-        XCTAssertEqual(starkHouse.count, 1)
-        starkHouse.add(person: arya)
+        // Se añade una nueva persona y se verifica que que se ha incluido
+        starkHouse.add(person: newStark)
+        XCTAssertEqual(starkHouse.count, 6)
         
-        XCTAssertEqual(starkHouse.count, 2)
+        // Se añade intenta añadir una persona que ya está dada de alta y se verifica que no la incluye
+        starkHouse.add(person: arya[0])
+        XCTAssertEqual(starkHouse.count, 6)
         
-        starkHouse.add(person: tyrion)
-        XCTAssertEqual(starkHouse.count, 2)
+        // Se añade intenta añadir una persona que no es de Stark y se verifica que no la incluye
+        starkHouse.add(person: tyrion[0])
+        XCTAssertEqual(starkHouse.count, 6)
     }
     
     func testAddMinorHouse() {
@@ -97,7 +112,7 @@ class HouseTest: XCTestCase {
         XCTAssertEqual(starkHouse, starkHouse)
         
         // Igualdad
-        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        let jinxed = starkHouse
         
         XCTAssertEqual(jinxed, starkHouse)
         

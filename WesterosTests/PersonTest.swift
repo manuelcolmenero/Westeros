@@ -11,19 +11,13 @@ import XCTest
 
 class PersonTest: XCTestCase {
     
-    // "!" significa que puede contener algo o nil
-    // Se declara fuera de setUp para que sea variable global
-    var starkImage      : UIImage!
-    var lannisterImage  : UIImage!
-    var mormontImage    : UIImage!
-    
-    var starkSigil      : Sigil!
-    var lannisterSigil  : Sigil!
-    var mormontSigil    : Sigil!
-    
+    // Houses
     var starkHouse      : House!
     var lannisterHouse  : House!
     var mormontHouse    : House!
+    var targaryenHouse  : House!
+    var greyjoyHouse    : House!
+    var tyrellHouse     : House!
     
     var robb            : Person!
     var arya            : Person!
@@ -32,18 +26,13 @@ class PersonTest: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        starkImage = #imageLiteral(resourceName: "codeIsComing.png")
-        lannisterImage = #imageLiteral(resourceName: "lannister.jpg")
-        mormontImage = #imageLiteral(resourceName: "mormotSigil.png")
         
-        starkSigil = Sigil(image: starkImage, description: "Direwolf")
-        lannisterSigil = Sigil(image: lannisterImage, description: "Rampant lion")
-        mormontSigil = Sigil(image: mormontImage, description: "Rampant bear")
-        
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
-        mormontHouse = House(name: "Mormont", sigil: mormontSigil, words: "Here we stand!")
+        starkHouse      = Repository.local.house(named: "Stark")
+        lannisterHouse  = Repository.local.house(named: "Lannister")
+        mormontHouse    = Repository.local.house(named: "Mormont")
+        targaryenHouse  = Repository.local.house(named: "Targaryen")
+        greyjoyHouse    = Repository.local.house(named: "Greyjoy")
+        tyrellHouse     = Repository.local.house(named: "Tyrell")
         
         robb    = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
         arya    = Person(name: "Arya", house: starkHouse)
