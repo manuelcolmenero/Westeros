@@ -11,6 +11,7 @@ import UIKit
 class WikiViewController: UIViewController {
 
     @IBOutlet weak var browserView: UIWebView!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     // Se obtiene el modelo
     let model : House
@@ -27,7 +28,15 @@ class WikiViewController: UIViewController {
     
     // Se sincroniza la vista con el modelo
     func syncViewWithModel() {
+        
+        // Se le configuran las propiedades
+        activityView.isHidden = false
+        activityView.startAnimating()
+        
         title   = model.name
+        
+        // Se indica a browserview quien es el delegado (en este caso él mismo)
+        browserView.delegate = self
         browserView.loadRequest(URLRequest(url: model.wikiURL))
     }
     
@@ -38,4 +47,22 @@ class WikiViewController: UIViewController {
         syncViewWithModel()
     }
     
+}
+
+extension WikiViewController : UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityView.isHidden = true
+        activityView.stopAnimating()
+    }
+    
+    func webView(_ webView: UIWebView,
+                 shouldStartLoadWith request: URLRequest,
+                 navigationType: UIWebViewNavigationType) -> Bool {
+        if (navigationType == .linkClicked)
+        || (navigationType == .formSubmitted) {
+            return false
+        }else {
+            return true
+        }
+    }
 }

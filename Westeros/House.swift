@@ -73,6 +73,12 @@ extension House{
         }
     }
     
+    // Sorted [Person]
+    // Se crea un metodo que devuelve un array de personas
+    func sortedMembers() -> [Person]{
+        return _members.sorted()
+    }
+    
     // Parte Minor House para guardar House en House
     
     // Extension de propiedad

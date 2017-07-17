@@ -27,6 +27,8 @@
 		268F39B11F17DE1000F50F66 /* targaryenSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AF1F17DE1000F50F66 /* targaryenSigil.png */; };
 		26DE6DE51F1D4A2300A10897 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */; };
 		26DE6DE61F1D4A2300A10897 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */; };
+		26DE6DED1F1D666F00A10897 /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE6DEB1F1D666F00A10897 /* HousesViewController.swift */; };
+		26DE6DEE1F1D666F00A10897 /* HousesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6DEC1F1D666F00A10897 /* HousesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		268F39AF1F17DE1000F50F66 /* targaryenSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targaryenSigil.png; sourceTree = "<group>"; };
 		26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
+		26DE6DEB1F1D666F00A10897 /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
+		26DE6DEC1F1D666F00A10897 /* HousesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HousesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 				26832F591F14128F00CB7CEF /* HouseViewController.xib */,
 				26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */,
 				26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */,
+				26DE6DEB1F1D666F00A10897 /* HousesViewController.swift */,
+				26DE6DEC1F1D666F00A10897 /* HousesViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				262E73321F0EC87700262208 /* lannister.jpg in Resources */,
 				2676AAB61F10D6AD00AEAB18 /* mormotSigil.png in Resources */,
 				262E73311F0EC87700262208 /* codeIsComing.png in Resources */,
+				26DE6DEE1F1D666F00A10897 /* HousesViewController.xib in Resources */,
 				261AA5581F0C47E400B97DBB /* LaunchScreen.storyboard in Resources */,
 				261AA5551F0C47E400B97DBB /* Assets.xcassets in Resources */,
 				26832F5B1F14128F00CB7CEF /* HouseViewController.xib in Resources */,
@@ -285,6 +292,7 @@
 				262E73371F0ECD5600262208 /* Person.swift in Sources */,
 				262E732D1F0EC23900262208 /* House.swift in Sources */,
 				261AA54E1F0C47E400B97DBB /* AppDelegate.swift in Sources */,
+				26DE6DED1F1D666F00A10897 /* HousesViewController.swift in Sources */,
 				26832F5A1F14128F00CB7CEF /* HouseViewController.swift in Sources */,
 				266676851F155DA500AC615B /* UIKitExtensions.swift in Sources */,
 				268F39AD1F17DDB100F50F66 /* Repository.swift in Sources */,
