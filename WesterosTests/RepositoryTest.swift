@@ -57,6 +57,7 @@ class RepositoryTest: XCTestCase {
     // Se crea un test para verificar el sistema de filtros
     func testLocalRepositoryFilter() {
         
+        let failURL = URL(string: "http://www.google.es")!
         
         // Se crea una fulción que devuelve un objeto House para filtra por la casa Stark
         func filterStark(house: House) -> Bool {
@@ -68,25 +69,43 @@ class RepositoryTest: XCTestCase {
         func filterFail(house: House) -> Bool {
             let failHouse = House(name: "Fail",
                                      sigil: (Repository.local.house(named: "Tyrell")?.sigil)!,
-                                     words: "No words")
+                                     words: "No words",
+                                     url: failURL)
             return house == failHouse
         }
         
         // result recibe como formato [House]?
-        var result  = Repository.local.houses(filter: filterStark)
+        var result  = Repository.local.houses(filteredBy: filterStark)
         
         // Se verifica que el filtro no ha devuelto vacio
-        XCTAssertNotEqual(result!, [])
+        XCTAssertNotEqual(result, [])
         
         // Se verifica que el filtro devuelto es igual a recuperar el mismo dato directamente
         let starkHouseForComparation      = Repository.local.house(named: "Stark")
-        XCTAssertEqual(result![0], starkHouseForComparation)
+        XCTAssertEqual(result.first, starkHouseForComparation)
         
         // Se verifica que el filtro ha devuelto vacio
-        result = Repository.local.houses(filter: filterFail)
-        XCTAssertEqual(result!, [])
+        result = Repository.local.houses(filteredBy: filterFail)
+        XCTAssertEqual(result, [])
         
         
+    }
+
+    // Resolución de deberes
+    func testLocalRepoReturnsHousesByNameCaseInsensitively(){
+        let stark = Repository.local.house(named: "sTarK")
+        XCTAssertEqual(stark?.name, "Stark")
+
+        let houseFail = Repository.local.house(named: "Fail")
+        XCTAssertNil(houseFail)
+    }
+    
+    func testHouseFiltering(){
+        // A las casas que me devuelve el repositorio se le filtra para 
+        // obtener aquellas con una sola persona
+        let filtered = Repository.local.houses(filteredBy: { $0.count == 1})
+        XCTAssertEqual(filtered.count, 1)
+
     }
     
     // Se crea un test para un repositorio remoto

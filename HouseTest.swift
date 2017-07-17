@@ -28,9 +28,9 @@ class HouseTest: XCTestCase {
     var tyrellSigil     : Sigil!
 
     // Characters
-    var robb            = [Person!]()
-    var arya            = [Person!]()
-    var tyrion          = [Person!]()
+    var robb            : Person!
+    var arya            : Person!
+    var tyrion          : Person!
     var newStark        : Person!
     
 //    var arrayHouses: Array<House>!
@@ -53,12 +53,11 @@ class HouseTest: XCTestCase {
         greyjoySigil    = greyjoyHouse.sigil
         tyrellSigil     = tyrellHouse.sigil
       
-        robb    = starkHouse.members.filter( { ($0.name == "Robb") })
-        arya    = starkHouse.members.filter( { ($0.name == "Arya") })
-        
-        tyrion  = lannisterHouse.members.filter( { ($0.name == "Tyrion") })
+        robb        = Person(name: "Robb", alias: "The young wolf", house: starkHouse)
+        arya        = Person(name: "Arya", house: starkHouse)
+        tyrion      = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
     
-        newStark = Person(name: "New", house: starkHouse)
+        newStark    = Person(name: "New", house: starkHouse)
         
     }
     
@@ -89,11 +88,11 @@ class HouseTest: XCTestCase {
         XCTAssertEqual(starkHouse.count, 6)
         
         // Se añade intenta añadir una persona que ya está dada de alta y se verifica que no la incluye
-        starkHouse.add(person: arya[0])
+        starkHouse.add(person: arya)
         XCTAssertEqual(starkHouse.count, 6)
         
         // Se añade intenta añadir una persona que no es de Stark y se verifica que no la incluye
-        starkHouse.add(person: tyrion[0])
+        starkHouse.add(person: tyrion)
         XCTAssertEqual(starkHouse.count, 6)
     }
     

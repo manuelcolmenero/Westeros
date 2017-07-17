@@ -24,13 +24,14 @@ final class House{
     let name    : String
     let sigil   : Sigil
     let words   : Words
+    let wikiURL : URL
     
-    var members : Members
+    private var _members : Members
     private var _minorHouses : MinorHouse
     
-    init(name : String, sigil : Sigil, words : Words) {
-        (self.name, self.sigil, self.words) = (name, sigil, words)
-        members = Members()
+    init(name : String, sigil : Sigil, words : Words, url: URL) {
+        (self.name, self.sigil, self.words, self.wikiURL) = (name, sigil, words, url)
+        _members = Members()
         _minorHouses = MinorHouse()
     }
 }
@@ -50,7 +51,7 @@ extension House{
 
     // Extension de propiedad
     var count : Int{
-        return members.count
+        return _members.count
     }
     
     // Extension de método
@@ -60,7 +61,16 @@ extension House{
             return
         }
         
-        members.insert(person)
+        _members.insert(person)
+    }
+    
+    // Sobrecarga de funciones. Se crea la misma función con distintos parámetros
+    
+    // Los '...' son Variadic versión. Quiere decir que puede recibir varios parámetros separados por comas.
+    func add(persons: Person...){
+        for person in persons{
+            add(person: person)
+        }
     }
     
     // Parte Minor House para guardar House en House
@@ -78,6 +88,13 @@ extension House{
         }
         
         _minorHouses.insert(house)
+    }
+    
+    // Sobrecarga de función addMinorHouse para incluir varias casas unas dentro de otra
+    func addMinorHouse(houses: House...){
+        for house in houses{
+            addMinorHouse(house: house)
+        }
     }
 }
 

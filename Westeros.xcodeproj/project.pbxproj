@@ -25,6 +25,8 @@
 		268F39AD1F17DDB100F50F66 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268F39AC1F17DDB100F50F66 /* Repository.swift */; };
 		268F39B01F17DE1000F50F66 /* tyrellSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AE1F17DE1000F50F66 /* tyrellSigil.png */; };
 		268F39B11F17DE1000F50F66 /* targaryenSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AF1F17DE1000F50F66 /* targaryenSigil.png */; };
+		26DE6DE51F1D4A2300A10897 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */; };
+		26DE6DE61F1D4A2300A10897 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		268F39AC1F17DDB100F50F66 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		268F39AE1F17DE1000F50F66 /* tyrellSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tyrellSigil.png; sourceTree = "<group>"; };
 		268F39AF1F17DE1000F50F66 /* targaryenSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targaryenSigil.png; sourceTree = "<group>"; };
+		26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
+		26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 			children = (
 				26832F581F14128F00CB7CEF /* HouseViewController.swift */,
 				26832F591F14128F00CB7CEF /* HouseViewController.xib */,
+				26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */,
+				26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DE6DE61F1D4A2300A10897 /* WikiViewController.xib in Resources */,
 				262E73321F0EC87700262208 /* lannister.jpg in Resources */,
 				2676AAB61F10D6AD00AEAB18 /* mormotSigil.png in Resources */,
 				262E73311F0EC87700262208 /* codeIsComing.png in Resources */,
@@ -281,6 +288,7 @@
 				26832F5A1F14128F00CB7CEF /* HouseViewController.swift in Sources */,
 				266676851F155DA500AC615B /* UIKitExtensions.swift in Sources */,
 				268F39AD1F17DDB100F50F66 /* Repository.swift in Sources */,
+				26DE6DE51F1D4A2300A10897 /* WikiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

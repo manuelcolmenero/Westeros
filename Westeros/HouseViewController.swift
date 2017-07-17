@@ -37,6 +37,32 @@ class HouseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupUI() {
+        // Se crea un botón a la barra de navigationController
+        
+        // UIBarButtonItem >>> clase que representa un botón
+        // target >>> Donde se va a ejecutar
+        // action >>> Método que se ha de ejecutar
+        let wiki    = UIBarButtonItem(title: "Wiki",
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(displayWiki))
+        
+        // Se añade el boton a la barra de navigationController
+        navigationItem.rightBarButtonItem = wiki
+    }
+    
+    // @objc >> Indica que la función no pertenece a Swift sino a Objective-C.
+    @objc func displayWiki() {
+        // Se crea un wikiVC
+        
+        let wikiVC = WikiViewController(model: model)
+        
+        // Se carga el wikiVC en el navigationController
+        navigationController?.pushViewController(wikiVC,
+                                                 animated: true)
+    }
+    
     // Se genera la función de sincronización
     func syncViewWithModel() {
         // model -> view
@@ -48,6 +74,8 @@ class HouseViewController: UIViewController {
     // Cuando aparece la vista se llama a sincronizar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        setupUI()
         
         syncViewWithModel()
     }
