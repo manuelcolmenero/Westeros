@@ -102,6 +102,12 @@ extension House{
             addMinorHouse(house: house)
         }
     }
+    
+    // Sorted [Person]
+    // Se crea un metodo que devuelve un array de personas
+    func sortedMinorHouses() -> [House]{
+        return _minorHouses.sorted()
+    }
 }
 
 extension House {

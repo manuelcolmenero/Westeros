@@ -40,6 +40,8 @@ class HouseViewController: UIViewController {
     func setupUI() {
         // Se crea un botón a la barra de navigationController
         
+        var buttonsArray = [UIBarButtonItem]()
+        
         // UIBarButtonItem >>> clase que representa un botón
         // target >>> Donde se va a ejecutar
         // action >>> Método que se ha de ejecutar
@@ -48,8 +50,27 @@ class HouseViewController: UIViewController {
                                       target: self,
                                       action: #selector(displayWiki))
         
-        // Se añade el boton a la barra de navigationController
-        navigationItem.rightBarButtonItem = wiki
+        buttonsArray.append(wiki)
+        
+        if model.sortedMembers() != [] {
+            let members    = UIBarButtonItem(title: "Members",
+                                             style: .plain,
+                                         	 target: self,
+                                         	 action: #selector(displayMembers))
+            buttonsArray.append(members)
+        }
+        
+        if model.sortedMinorHouses() != [] {
+            let vassals    = UIBarButtonItem(title: "Vassals",
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(displayVassals))
+            buttonsArray.append(vassals)
+            
+        }
+        
+        // Se añaden los botones a la barra de navigationController
+        navigationItem.rightBarButtonItems = buttonsArray
     }
     
     // @objc >> Indica que la función no pertenece a Swift sino a Objective-C.
@@ -60,6 +81,26 @@ class HouseViewController: UIViewController {
         
         // Se carga el wikiVC en el navigationController
         navigationController?.pushViewController(wikiVC,
+                                                 animated: true)
+    }
+    
+    @objc func displayMembers() {
+        // Se crea un membersVC
+        
+        let membersVC = MembersViewController(model: model.sortedMembers())
+        
+        // Se carga el wikiVC en el navigationController
+        navigationController?.pushViewController(membersVC,
+                                                 animated: true)
+    }
+    
+    @objc func displayVassals() {
+        // Se crea un vassalsVC
+        
+        let vassalsVC = MinorHousesViewController(model: model.sortedMinorHouses())
+        
+        // Se carga el wikiVC en el navigationController
+        navigationController?.pushViewController(vassalsVC,
                                                  animated: true)
     }
     
