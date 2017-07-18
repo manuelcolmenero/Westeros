@@ -132,6 +132,11 @@ final class LocalFactory : HouseFactory {
             // ---- Tyrell ----
             tyrell.add(persons: mace, loras, margaery, olenna)
             
+            
+            // Add vassals in houses
+            stark.addMinorHouse(houses: mormont)
+            
+            
             return [stark, lannister, mormont, tyrell, greyjoy, targaryen].sorted()
         }
     }
