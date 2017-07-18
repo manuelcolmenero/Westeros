@@ -8,9 +8,6 @@
 
 import Foundation
 
-// Se crea un typealias de función (clausura) que recibe una House y devuelve un Bool
-typealias FilteredBy = (House) -> Bool
-
 // Clase con propiedad estatica
 final class Repository {
     
@@ -19,6 +16,9 @@ final class Repository {
 
 // Protocolo de crear casas independiente del canal
 protocol HouseFactory {
+    
+    // Se crea un typealias de función (clausura) que recibe una House y devuelve un Bool
+    typealias Filter = (House)->Bool
 
     var houses : [House] {get}
     
@@ -26,7 +26,7 @@ protocol HouseFactory {
     func house(named : String) -> House?
     
     // Función que trata de obtener casa filtradas por algun criterio.
-    func houses(filter: FilteredBy) -> [House]?
+    func houses(filteredBy: Filter) -> [House]
     
 }
 
@@ -37,6 +37,14 @@ final class LocalFactory : HouseFactory {
         get{
             // Aquí es donde se crean las casas
             
+            // URLs
+            let starkURL        = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+            let lannisterURL    = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!
+            let mormontURL      = URL(string: "https://awoiaf.westeros.org/index.php/House_Mormont")!
+            let greyjoyURL      = URL(string: "https://awoiaf.westeros.org/index.php/House_Greyjoy")!
+            let targaryenURL    = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
+            let tyrellURL       = URL(string: "https://awoiaf.westeros.org/index.php/House_Tyrell")!
+            
             // Sigils
             let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
             let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant lion")
@@ -46,12 +54,30 @@ final class LocalFactory : HouseFactory {
             let tyrellSigil = Sigil(image: #imageLiteral(resourceName: "tyrellSigil.png"), description: "A golden rose on a green field")
             
             // Houses
-            let stark       = House(name: "Stark", sigil: starkSigil, words: "Winter is coming")
-            let lannister   = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
-            let mormont     = House(name: "Mormont", sigil: mormontSigil, words: "Here we stand!")
-            let greyjoy     = House(name: "Greyjoy", sigil: greyjoySigil, words: "We Do Not Sow")
-            let targaryen   = House(name: "Targaryen", sigil: targaryenSigil, words: "Fire and Blood")
-            let tyrell      = House(name: "Tyrell", sigil: tyrellSigil, words: "Growing Strong")
+            let stark       = House(name: "Stark",
+                                    sigil: starkSigil,
+                                    words: "Winter is coming",
+                                    url: starkURL)
+            let lannister   = House(name: "Lannister",
+                                    sigil: lannisterSigil,
+                                    words: "Hear me roar!",
+                                    url: lannisterURL)
+            let mormont     = House(name: "Mormont",
+                                    sigil: mormontSigil,
+                                    words: "Here we stand!",
+                                    url: mormontURL)
+            let greyjoy     = House(name: "Greyjoy",
+                                    sigil: greyjoySigil,
+                                    words: "We Do Not Sow",
+                                    url: greyjoyURL)
+            let targaryen   = House(name: "Targaryen",
+                                    sigil: targaryenSigil,
+                                    words: "Fire and Blood",
+                                    url: targaryenURL)
+            let tyrell      = House(name: "Tyrell",
+                                    sigil: tyrellSigil,
+                                    words: "Growing Strong",
+                                    url: tyrellURL)
             
             
             // Characters
@@ -73,64 +99,63 @@ final class LocalFactory : HouseFactory {
             let lyanna  = Person(name: "Lyanna", house: mormont)
             
             // ---- Greyjoy ----
-            let asha  = Person(name: "Asha", alias: "Esgred", house: greyjoy)
-            let theon  = Person(name: "Theon", alias: "Reek", house: greyjoy)
-            let euron  = Person(name: "Euron III", alias: "Crow's Eye", house: greyjoy)
+            let asha    = Person(name: "Asha", alias: "Esgred", house: greyjoy)
+            let theon   = Person(name: "Theon", alias: "Reek", house: greyjoy)
+            let euron   = Person(name: "Euron III", alias: "Crow's Eye", house: greyjoy)
             
             // ---- Targaryen ----
-            let daenerys  = Person(name: "Daenerys", alias: "Dragonmother", house: targaryen)
-            let viserys  = Person(name: "Viserys", alias: "The Beggar King", house: targaryen)
+            let daenerys    = Person(name: "Daenerys", alias: "Dragonmother", house: targaryen)
+            let viserys     = Person(name: "Viserys", alias: "The Beggar King", house: targaryen)
             
             // ---- Tyrell ----
-            let mace  = Person(name: "Mace", alias: "Lord Oaf", house: tyrell)
-            let loras  = Person(name: "Loras", alias: "The Knight of Flowers", house: tyrell)
-            let margaery  = Person(name: "Margaery", alias: "Little rose", house: tyrell)
-            let olenna  = Person(name: "Olenna", alias: "Queen of Thorns", house: tyrell)
+            let mace        = Person(name: "Mace", alias: "Lord Oaf", house: tyrell)
+            let loras       = Person(name: "Loras", alias: "The Knight of Flowers", house: tyrell)
+            let margaery    = Person(name: "Margaery", alias: "Little rose", house: tyrell)
+            let olenna      = Person(name: "Olenna", alias: "Queen of Thorns", house: tyrell)
             
             // Add characters in houses
             // ---- Stark ----
-            stark.add(person: robb)
-            stark.add(person: sansa)
-            stark.add(person: arya)
-            stark.add(person: brandon)
-            stark.add(person: rickon)
+            stark.add(persons: robb, sansa, arya, brandon, rickon)
             
             // ---- Lannister ----
-            lannister.add(person: tyrion)
-            lannister.add(person: jaime)
-            lannister.add(person: cersei)
-            lannister.add(person: lancel)
+            lannister.add(persons: tyrion, jaime, cersei, lancel)
             
             // ---- Mormont ----
-            mormont.add(person: lyanna)
+            mormont.add(persons: lyanna)
             
             // ---- Greyjoy ----
-            greyjoy.add(person: asha)
-            greyjoy.add(person: theon)
-            greyjoy.add(person: euron)
+            greyjoy.add(persons: asha, theon, euron)
             
             // ---- Targaryen ----
-            targaryen.add(person: daenerys)
-            targaryen.add(person: viserys)
+            targaryen.add(persons: daenerys, viserys)
             
             // ---- Tyrell ----
-            tyrell.add(person: mace)
-            tyrell.add(person: loras)
-            tyrell.add(person: margaery)
-            tyrell.add(person: olenna)
+            tyrell.add(persons: mace, loras, margaery, olenna)
             
             return [stark, lannister, mormont, tyrell, greyjoy, targaryen].sorted()
         }
     }
 
+    // se recibe como parametro un String y devuelve un objeto opcional House dado que puede devolver nil
     func house(named: String) -> House? {
-        return houses.filter({ (house: House) -> Bool in
-            return house.name == named
-        }).first
+        
+        // Se parte de un array de houses y se le aplica una clausura filter
+        
+        /* 
+            Si el objeto con nombre puesto en mayusculas coincide con el parametro recibido en
+            mayusculas devuelve el objeto primero encontrado dado que se trabaja con un array de
+            objetos y hay que devolver uno
+        */
+        let house = houses.filter{$0.name.uppercased() == named.uppercased()}.first
+        return house
+        
     }
     
-    func houses(filter: FilteredBy) -> [House]? {
-        return houses.filter(filter)
+    // Función que recibe House y devuelve un bool (Si pasa o no) y despues devuelve un array House con 
+    // todos aquellos registros que han dado positivo
+    func houses(filteredBy: Filter) -> [House] {
+        let filtered = Repository.local.houses.filter(filteredBy)
+        return filtered
     }
     
 }
