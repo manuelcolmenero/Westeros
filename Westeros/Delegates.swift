@@ -10,10 +10,10 @@ import UIKit
 
 final class Delegates{
     
-//    static func housesDelegate(model: [House])->ArrayTableViewDelegate<House>{
-//        
-//        // Qué va aqui???
-//        
-//    
-//    }
+    static func housesDelegate(model: [House])->ArrayTableViewDelegate<House>{
+        return ArrayTableViewDelegate(model: model, viewControllerMaker: { (house: House) -> UIViewController in
+        
+            return HouseViewController(model: house)
+        })
+    }
 }
