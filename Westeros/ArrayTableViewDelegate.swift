@@ -29,12 +29,8 @@ final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate{
         // Qué pasa aquí dentro?
         let elt   = _model[indexPath.row]
         
-
-        let rootNav = UINavigationController()
-        let newNav =  _viewControllerMaker(elt).wrappedInNavigation()
+        _viewControllerMaker(elt)
         
-        rootNav.navigationController?.popToViewController(newNav, animated: true)
-        rootNav.popToRootViewController(animated: true)
         
     }
     
