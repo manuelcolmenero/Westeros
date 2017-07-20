@@ -53,7 +53,7 @@ final class LocalFactory : HouseFactory {
             let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSigil.png"), description: "A red three-headed dragon")
             let tyrellSigil = Sigil(image: #imageLiteral(resourceName: "tyrellSigil.png"), description: "A golden rose on a green field")
             
-            // Houses
+            // Mayor Houses
             let stark       = House(name: "Stark",
                                     sigil: starkSigil,
                                     words: "Winter is coming",
@@ -62,10 +62,6 @@ final class LocalFactory : HouseFactory {
                                     sigil: lannisterSigil,
                                     words: "Hear me roar!",
                                     url: lannisterURL)
-            let mormont     = House(name: "Mormont",
-                                    sigil: mormontSigil,
-                                    words: "Here we stand!",
-                                    url: mormontURL)
             let greyjoy     = House(name: "Greyjoy",
                                     sigil: greyjoySigil,
                                     words: "We Do Not Sow",
@@ -79,6 +75,23 @@ final class LocalFactory : HouseFactory {
                                     words: "Growing Strong",
                                     url: tyrellURL)
             
+            // Minor Houses
+            // ---- Stark ----
+            let mormont     = House(name: "Mormont",
+                                    sigil: mormontSigil,
+                                    words: "Here we stand!",
+                                    url: mormontURL)
+            
+            // House Reed
+            // House Glover
+            // House Tully
+            
+            // ---- Lannister ----
+            // House Frey
+            // House Payne
+            
+            // ---- Tyrell ----
+            // House Tarly
             
             // Characters
             // ---- Stark ----
@@ -134,6 +147,7 @@ final class LocalFactory : HouseFactory {
             
             
             // Add vassals in houses
+            // ---- Stark ----
             stark.addMinorHouse(houses: mormont)
             
             
@@ -162,5 +176,4 @@ final class LocalFactory : HouseFactory {
         let filtered = Repository.local.houses.filter(filteredBy)
         return filtered
     }
-    
 }

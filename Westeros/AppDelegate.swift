@@ -25,13 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.orange
         
-        // Se obtienen los modelos
+        // Se crea el modelo
         let houses = Repository.local.houses
         
-        // Se crea la tabla
-        let housesVC = HousesViewController(model: houses).wrappedInNavigation()
+        // Se crean los controladores
+        let dataSource = DataSources.houseDataSource(model: houses)
+        let housesVC = ArrayTableViewController(dataSource: dataSource,
+                                                title: "Westeros",
+                                                style: .plain).wrappedInNavigation()
         
-        // Se asigna el RootVC
+        // Asignamos el RootVC
         window?.rootViewController = housesVC
         
         
