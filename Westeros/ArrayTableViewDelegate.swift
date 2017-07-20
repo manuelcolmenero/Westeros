@@ -11,7 +11,7 @@ import UIKit
 final class ArrayTableViewDelegate<Element>: NSObject, UITableViewDelegate{
     
     typealias Elements                 = [Element]
-    typealias ViewControllerMaker      = (Element) -> (UIViewController)
+    typealias ViewControllerMaker      = (Element) -> ()
 
     private let _model                 : Elements
     private let _viewControllerMaker   : ViewControllerMaker

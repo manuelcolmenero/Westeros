@@ -10,10 +10,15 @@ import UIKit
 
 final class Delegates{
     
-    static func housesDelegate(model: [House])->ArrayTableViewDelegate<House>{
-        return ArrayTableViewDelegate(model: model, viewControllerMaker: { (house: House) -> UIViewController in
+    static func housesDelegate(model: [House],
+                               nav  : UINavigationController)->ArrayTableViewDelegate<House>{
         
-            return HouseViewController(model: house)
+        
+        return ArrayTableViewDelegate(model: model,
+                                      viewControllerMaker: { (house: House) -> () in
+        
+            let houseVC =  HouseViewController(model: house)
+            nav.pushViewController(houseVC, animated: true)
         })
     }
 }
