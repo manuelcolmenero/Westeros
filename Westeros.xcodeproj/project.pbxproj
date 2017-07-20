@@ -29,6 +29,12 @@
 		268F39AD1F17DDB100F50F66 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268F39AC1F17DDB100F50F66 /* Repository.swift */; };
 		268F39B01F17DE1000F50F66 /* tyrellSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AE1F17DE1000F50F66 /* tyrellSigil.png */; };
 		268F39B11F17DE1000F50F66 /* targaryenSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AF1F17DE1000F50F66 /* targaryenSigil.png */; };
+		26A404F41F1E99E200BEE379 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404F31F1E99E200BEE379 /* ArrayDataSource.swift */; };
+		26A404F61F1E9EE200BEE379 /* ArrayDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404F51F1E9EE200BEE379 /* ArrayDataSourceTest.swift */; };
+		26A404F81F1EA99700BEE379 /* ArrayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404F71F1EA99700BEE379 /* ArrayTableViewController.swift */; };
+		26A404FC1F1EAB7400BEE379 /* DataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404FB1F1EAB7400BEE379 /* DataSources.swift */; };
+		26A404FE1F1EB02200BEE379 /* ArrayTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404FD1F1EB02200BEE379 /* ArrayTableViewDelegate.swift */; };
+		26A405021F1EB12000BEE379 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A405011F1EB12000BEE379 /* Delegates.swift */; };
 		26DE6DE51F1D4A2300A10897 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */; };
 		26DE6DE61F1D4A2300A10897 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */; };
 		26DE6DED1F1D666F00A10897 /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DE6DEB1F1D666F00A10897 /* HousesViewController.swift */; };
@@ -72,6 +78,12 @@
 		268F39AC1F17DDB100F50F66 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		268F39AE1F17DE1000F50F66 /* tyrellSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tyrellSigil.png; sourceTree = "<group>"; };
 		268F39AF1F17DE1000F50F66 /* targaryenSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targaryenSigil.png; sourceTree = "<group>"; };
+		26A404F31F1E99E200BEE379 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
+		26A404F51F1E9EE200BEE379 /* ArrayDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceTest.swift; sourceTree = "<group>"; };
+		26A404F71F1EA99700BEE379 /* ArrayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewController.swift; sourceTree = "<group>"; };
+		26A404FB1F1EAB7400BEE379 /* DataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSources.swift; sourceTree = "<group>"; };
+		26A404FD1F1EB02200BEE379 /* ArrayTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewDelegate.swift; sourceTree = "<group>"; };
+		26A405011F1EB12000BEE379 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		26DE6DEB1F1D666F00A10897 /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousesViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +148,7 @@
 				262E732A1F0EC0F900262208 /* HouseTest.swift */,
 				262E73341F0ECAB200262208 /* PersonTest.swift */,
 				266676861F15608600AC615B /* RepositoryTest.swift */,
+				26A404F51F1E9EE200BEE379 /* ArrayDataSourceTest.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -174,6 +187,7 @@
 		26832F5C1F14129500CB7CEF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26A404F91F1EAB4E00BEE379 /* Generics */,
 				26832F581F14128F00CB7CEF /* HouseViewController.swift */,
 				26832F591F14128F00CB7CEF /* HouseViewController.xib */,
 				26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */,
@@ -186,6 +200,34 @@
 				268AB0E71F1E730E0017F1A2 /* MinorHousesViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		26A404F91F1EAB4E00BEE379 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				26A405001F1EB0EF00BEE379 /* Delegates */,
+				26A404FF1F1EB0DF00BEE379 /* DataSource */,
+				26A404F31F1E99E200BEE379 /* ArrayDataSource.swift */,
+				26A404F71F1EA99700BEE379 /* ArrayTableViewController.swift */,
+				26A404FD1F1EB02200BEE379 /* ArrayTableViewDelegate.swift */,
+			);
+			name = Generics;
+			sourceTree = "<group>";
+		};
+		26A404FF1F1EB0DF00BEE379 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				26A404FB1F1EAB7400BEE379 /* DataSources.swift */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		26A405001F1EB0EF00BEE379 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				26A405011F1EB12000BEE379 /* Delegates.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,11 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A404FC1F1EAB7400BEE379 /* DataSources.swift in Sources */,
+				26A405021F1EB12000BEE379 /* Delegates.swift in Sources */,
 				262E73371F0ECD5600262208 /* Person.swift in Sources */,
 				268AB0E41F1E70490017F1A2 /* MembersViewController.swift in Sources */,
 				262E732D1F0EC23900262208 /* House.swift in Sources */,
+				26A404F81F1EA99700BEE379 /* ArrayTableViewController.swift in Sources */,
 				268AB0E81F1E730E0017F1A2 /* MinorHousesViewController.swift in Sources */,
+				26A404FE1F1EB02200BEE379 /* ArrayTableViewDelegate.swift in Sources */,
 				261AA54E1F0C47E400B97DBB /* AppDelegate.swift in Sources */,
+				26A404F41F1E99E200BEE379 /* ArrayDataSource.swift in Sources */,
 				26DE6DED1F1D666F00A10897 /* HousesViewController.swift in Sources */,
 				26832F5A1F14128F00CB7CEF /* HouseViewController.swift in Sources */,
 				266676851F155DA500AC615B /* UIKitExtensions.swift in Sources */,
@@ -322,6 +369,7 @@
 			files = (
 				262E732B1F0EC0F900262208 /* HouseTest.swift in Sources */,
 				262E73351F0ECAB200262208 /* PersonTest.swift in Sources */,
+				26A404F61F1E9EE200BEE379 /* ArrayDataSourceTest.swift in Sources */,
 				266676871F15608600AC615B /* RepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
