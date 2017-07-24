@@ -21,4 +21,17 @@ final class Delegates{
             nav.pushViewController(houseVC, animated: true)
         })
     }
+
+    static func seasonsDelegate(model: [Season],
+                               nav  : UINavigationController)->ArrayTableViewDelegate<Season>{
+        
+        
+        return ArrayTableViewDelegate(model: model,
+                                      viewControllerMaker: { (season: Season) -> () in
+                                        
+                                        let episodesVC =  EpisodesViewController(model: season.sortedChapters())
+                                        nav.pushViewController(episodesVC, animated: true)
+        })
+    }
+
 }

@@ -25,23 +25,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.orange
         
+//        // Se crea el modelo
+//        let houses = Repository.local.houses
+//        
+//        // Se crean los controladores
+//        let navigatorC = UINavigationController()
+//        
+//        let dataSource = DataSources.houseDataSource(model: houses)
+//        let delegate   = Delegates.housesDelegate(model: houses, nav: navigatorC)
+//        
+//        
+//        let housesVC = ArrayTableViewController(dataSource: dataSource,
+//                                                delegate: delegate,
+//                                                title: "Westeros",
+//                                                style: .plain)
+//        
+//        navigatorC.pushViewController(housesVC, animated: true)
+//
+//        // Asignamos el RootVC
+//        window?.rootViewController = navigatorC
+
+        
         // Se crea el modelo
-        let houses = Repository.local.houses
+        let seasons = RepositorySeasons.local.seasons
         
         // Se crean los controladores
         let navigatorC = UINavigationController()
         
-        let dataSource = DataSources.houseDataSource(model: houses)
-        let delegate   = Delegates.housesDelegate(model: houses, nav: navigatorC)
+        let dataSource = DataSources.seasonDataSource(model: seasons)
+        let delegate   = Delegates.seasonsDelegate(model: seasons, nav: navigatorC)
         
         
-        let housesVC = ArrayTableViewController(dataSource: dataSource,
+        let seasonsVC = ArrayTableViewController(dataSource: dataSource,
                                                 delegate: delegate,
                                                 title: "Westeros",
                                                 style: .plain)
         
-        navigatorC.pushViewController(housesVC, animated: true)
-
+        navigatorC.pushViewController(seasonsVC, animated: true)
+        
         // Asignamos el RootVC
         window?.rootViewController = navigatorC
         

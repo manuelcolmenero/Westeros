@@ -14,6 +14,8 @@ final class Repository {
     static let local = LocalFactory()
 }
 
+// Mark: - HouseFactory
+
 // Protocolo de crear casas independiente del canal
 protocol HouseFactory {
     
@@ -30,9 +32,10 @@ protocol HouseFactory {
     
 }
 
+// Mark: - LocalFactory
 // Función para crear modo local casas
 final class LocalFactory : HouseFactory {
-
+        
     var houses: [House]{
         get{
             // Aquí es donde se crean las casas
