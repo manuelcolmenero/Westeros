@@ -26,6 +26,10 @@
 		268F39AD1F17DDB100F50F66 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268F39AC1F17DDB100F50F66 /* Repository.swift */; };
 		268F39B01F17DE1000F50F66 /* tyrellSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AE1F17DE1000F50F66 /* tyrellSigil.png */; };
 		268F39B11F17DE1000F50F66 /* targaryenSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AF1F17DE1000F50F66 /* targaryenSigil.png */; };
+		269621831F293C4100681D00 /* tullySigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 269621801F293C4100681D00 /* tullySigil.png */; };
+		269621841F293C4100681D00 /* gloverSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 269621811F293C4100681D00 /* gloverSigil.png */; };
+		269621851F293C4100681D00 /* reedSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 269621821F293C4100681D00 /* reedSigil.png */; };
+		269621871F293D9700681D00 /* tarlySigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 269621861F293D9700681D00 /* tarlySigil.png */; };
 		26A010D91F291F0800C74369 /* lannisterSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A010D71F291F0800C74369 /* lannisterSigil.png */; };
 		26A010DA1F291F0800C74369 /* starkSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A010D81F291F0800C74369 /* starkSigil.png */; };
 		26A010DC1F29200900C74369 /* mormontSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A010DB1F29200900C74369 /* mormontSigil.png */; };
@@ -84,6 +88,10 @@
 		268F39AC1F17DDB100F50F66 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		268F39AE1F17DE1000F50F66 /* tyrellSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tyrellSigil.png; sourceTree = "<group>"; };
 		268F39AF1F17DE1000F50F66 /* targaryenSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targaryenSigil.png; sourceTree = "<group>"; };
+		269621801F293C4100681D00 /* tullySigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tullySigil.png; sourceTree = "<group>"; };
+		269621811F293C4100681D00 /* gloverSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gloverSigil.png; sourceTree = "<group>"; };
+		269621821F293C4100681D00 /* reedSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reedSigil.png; sourceTree = "<group>"; };
+		269621861F293D9700681D00 /* tarlySigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tarlySigil.png; sourceTree = "<group>"; };
 		26A010D71F291F0800C74369 /* lannisterSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lannisterSigil.png; sourceTree = "<group>"; };
 		26A010D81F291F0800C74369 /* starkSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starkSigil.png; sourceTree = "<group>"; };
 		26A010DB1F29200900C74369 /* mormontSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mormontSigil.png; sourceTree = "<group>"; };
@@ -189,12 +197,16 @@
 		262E73331F0EC87E00262208 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				26A010DB1F29200900C74369 /* mormontSigil.png */,
-				26A010D71F291F0800C74369 /* lannisterSigil.png */,
-				26A010D81F291F0800C74369 /* starkSigil.png */,
+				269621811F293C4100681D00 /* gloverSigil.png */,
 				268F39AA1F17DD8F00F50F66 /* greyjoySigil.png */,
-				268F39AE1F17DE1000F50F66 /* tyrellSigil.png */,
+				26A010D71F291F0800C74369 /* lannisterSigil.png */,
+				26A010DB1F29200900C74369 /* mormontSigil.png */,
+				269621821F293C4100681D00 /* reedSigil.png */,
+				26A010D81F291F0800C74369 /* starkSigil.png */,
 				268F39AF1F17DE1000F50F66 /* targaryenSigil.png */,
+				269621861F293D9700681D00 /* tarlySigil.png */,
+				269621801F293C4100681D00 /* tullySigil.png */,
+				268F39AE1F17DE1000F50F66 /* tyrellSigil.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -345,6 +357,8 @@
 				26DE6DE61F1D4A2300A10897 /* WikiViewController.xib in Resources */,
 				26CA5E5B1F24E51B00FAE465 /* EpisodesViewController.xib in Resources */,
 				268AB0E91F1E730E0017F1A2 /* MinorHousesViewController.xib in Resources */,
+				269621831F293C4100681D00 /* tullySigil.png in Resources */,
+				269621851F293C4100681D00 /* reedSigil.png in Resources */,
 				26A010DC1F29200900C74369 /* mormontSigil.png in Resources */,
 				26DE6DEE1F1D666F00A10897 /* HousesViewController.xib in Resources */,
 				261AA5581F0C47E400B97DBB /* LaunchScreen.storyboard in Resources */,
@@ -352,7 +366,9 @@
 				26832F5B1F14128F00CB7CEF /* HouseViewController.xib in Resources */,
 				26CA5E571F24E2A700FAE465 /* SeasonsViewController.xib in Resources */,
 				268AB0E51F1E70490017F1A2 /* MembersViewController.xib in Resources */,
+				269621841F293C4100681D00 /* gloverSigil.png in Resources */,
 				268F39B01F17DE1000F50F66 /* tyrellSigil.png in Resources */,
+				269621871F293D9700681D00 /* tarlySigil.png in Resources */,
 				26A010D91F291F0800C74369 /* lannisterSigil.png in Resources */,
 				268F39B11F17DE1000F50F66 /* targaryenSigil.png in Resources */,
 				268F39AB1F17DD8F00F50F66 /* greyjoySigil.png in Resources */,
