@@ -49,9 +49,9 @@ final class LocalFactory : HouseFactory {
             let tyrellURL       = URL(string: "https://awoiaf.westeros.org/index.php/House_Tyrell")!
             
             // Sigils
-            let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-            let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant lion")
-            let mormontSigil = Sigil(image: #imageLiteral(resourceName: "mormotSigil.png"), description: "Rampant bear")
+            let starkSigil = Sigil(image: #imageLiteral(resourceName: "starkSigil.png"), description: "Direwolf")
+            let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannisterSigil.png"), description: "Rampant lion")
+            let mormontSigil = Sigil(image: #imageLiteral(resourceName: "mormontSigil.png"), description: "Rampant bear")
             let greyjoySigil = Sigil(image: #imageLiteral(resourceName: "greyjoySigil.png"), description: "A golden kraken on a black field")
             let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSigil.png"), description: "A red three-headed dragon")
             let tyrellSigil = Sigil(image: #imageLiteral(resourceName: "tyrellSigil.png"), description: "A golden rose on a green field")

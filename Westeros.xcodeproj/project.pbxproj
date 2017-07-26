@@ -12,13 +12,10 @@
 		261AA5581F0C47E400B97DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261AA5561F0C47E400B97DBB /* LaunchScreen.storyboard */; };
 		262E732B1F0EC0F900262208 /* HouseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E732A1F0EC0F900262208 /* HouseTest.swift */; };
 		262E732D1F0EC23900262208 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E732C1F0EC23900262208 /* House.swift */; };
-		262E73311F0EC87700262208 /* codeIsComing.png in Resources */ = {isa = PBXBuildFile; fileRef = 262E732F1F0EC87700262208 /* codeIsComing.png */; };
-		262E73321F0EC87700262208 /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 262E73301F0EC87700262208 /* lannister.jpg */; };
 		262E73351F0ECAB200262208 /* PersonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E73341F0ECAB200262208 /* PersonTest.swift */; };
 		262E73371F0ECD5600262208 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262E73361F0ECD5600262208 /* Person.swift */; };
 		266676851F155DA500AC615B /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266676841F155DA500AC615B /* UIKitExtensions.swift */; };
 		266676871F15608600AC615B /* RepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266676861F15608600AC615B /* RepositoryTest.swift */; };
-		2676AAB61F10D6AD00AEAB18 /* mormotSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 2676AAB51F10D6AD00AEAB18 /* mormotSigil.png */; };
 		26832F5A1F14128F00CB7CEF /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26832F581F14128F00CB7CEF /* HouseViewController.swift */; };
 		26832F5B1F14128F00CB7CEF /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26832F591F14128F00CB7CEF /* HouseViewController.xib */; };
 		268AB0E41F1E70490017F1A2 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268AB0E21F1E70490017F1A2 /* MembersViewController.swift */; };
@@ -29,6 +26,9 @@
 		268F39AD1F17DDB100F50F66 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268F39AC1F17DDB100F50F66 /* Repository.swift */; };
 		268F39B01F17DE1000F50F66 /* tyrellSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AE1F17DE1000F50F66 /* tyrellSigil.png */; };
 		268F39B11F17DE1000F50F66 /* targaryenSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 268F39AF1F17DE1000F50F66 /* targaryenSigil.png */; };
+		26A010D91F291F0800C74369 /* lannisterSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A010D71F291F0800C74369 /* lannisterSigil.png */; };
+		26A010DA1F291F0800C74369 /* starkSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A010D81F291F0800C74369 /* starkSigil.png */; };
+		26A010DC1F29200900C74369 /* mormontSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = 26A010DB1F29200900C74369 /* mormontSigil.png */; };
 		26A404F41F1E99E200BEE379 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404F31F1E99E200BEE379 /* ArrayDataSource.swift */; };
 		26A404F61F1E9EE200BEE379 /* ArrayDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404F51F1E9EE200BEE379 /* ArrayDataSourceTest.swift */; };
 		26A404F81F1EA99700BEE379 /* ArrayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A404F71F1EA99700BEE379 /* ArrayTableViewController.swift */; };
@@ -70,13 +70,10 @@
 		261AA5641F0C47E400B97DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262E732A1F0EC0F900262208 /* HouseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HouseTest.swift; path = ../HouseTest.swift; sourceTree = "<group>"; };
 		262E732C1F0EC23900262208 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
-		262E732F1F0EC87700262208 /* codeIsComing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeIsComing.png; sourceTree = "<group>"; };
-		262E73301F0EC87700262208 /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
 		262E73341F0ECAB200262208 /* PersonTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTest.swift; sourceTree = "<group>"; };
 		262E73361F0ECD5600262208 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		266676841F155DA500AC615B /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		266676861F15608600AC615B /* RepositoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTest.swift; sourceTree = "<group>"; };
-		2676AAB51F10D6AD00AEAB18 /* mormotSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mormotSigil.png; sourceTree = "<group>"; };
 		26832F581F14128F00CB7CEF /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		26832F591F14128F00CB7CEF /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 		268AB0E21F1E70490017F1A2 /* MembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +84,9 @@
 		268F39AC1F17DDB100F50F66 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		268F39AE1F17DE1000F50F66 /* tyrellSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tyrellSigil.png; sourceTree = "<group>"; };
 		268F39AF1F17DE1000F50F66 /* targaryenSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targaryenSigil.png; sourceTree = "<group>"; };
+		26A010D71F291F0800C74369 /* lannisterSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lannisterSigil.png; sourceTree = "<group>"; };
+		26A010D81F291F0800C74369 /* starkSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starkSigil.png; sourceTree = "<group>"; };
+		26A010DB1F29200900C74369 /* mormontSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mormontSigil.png; sourceTree = "<group>"; };
 		26A404F31F1E99E200BEE379 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		26A404F51F1E9EE200BEE379 /* ArrayDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceTest.swift; sourceTree = "<group>"; };
 		26A404F71F1EA99700BEE379 /* ArrayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewController.swift; sourceTree = "<group>"; };
@@ -189,12 +189,12 @@
 		262E73331F0EC87E00262208 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				262E732F1F0EC87700262208 /* codeIsComing.png */,
-				2676AAB51F10D6AD00AEAB18 /* mormotSigil.png */,
+				26A010DB1F29200900C74369 /* mormontSigil.png */,
+				26A010D71F291F0800C74369 /* lannisterSigil.png */,
+				26A010D81F291F0800C74369 /* starkSigil.png */,
 				268F39AA1F17DD8F00F50F66 /* greyjoySigil.png */,
 				268F39AE1F17DE1000F50F66 /* tyrellSigil.png */,
 				268F39AF1F17DE1000F50F66 /* targaryenSigil.png */,
-				262E73301F0EC87700262208 /* lannister.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -344,10 +344,8 @@
 			files = (
 				26DE6DE61F1D4A2300A10897 /* WikiViewController.xib in Resources */,
 				26CA5E5B1F24E51B00FAE465 /* EpisodesViewController.xib in Resources */,
-				262E73321F0EC87700262208 /* lannister.jpg in Resources */,
-				2676AAB61F10D6AD00AEAB18 /* mormotSigil.png in Resources */,
 				268AB0E91F1E730E0017F1A2 /* MinorHousesViewController.xib in Resources */,
-				262E73311F0EC87700262208 /* codeIsComing.png in Resources */,
+				26A010DC1F29200900C74369 /* mormontSigil.png in Resources */,
 				26DE6DEE1F1D666F00A10897 /* HousesViewController.xib in Resources */,
 				261AA5581F0C47E400B97DBB /* LaunchScreen.storyboard in Resources */,
 				261AA5551F0C47E400B97DBB /* Assets.xcassets in Resources */,
@@ -355,8 +353,10 @@
 				26CA5E571F24E2A700FAE465 /* SeasonsViewController.xib in Resources */,
 				268AB0E51F1E70490017F1A2 /* MembersViewController.xib in Resources */,
 				268F39B01F17DE1000F50F66 /* tyrellSigil.png in Resources */,
+				26A010D91F291F0800C74369 /* lannisterSigil.png in Resources */,
 				268F39B11F17DE1000F50F66 /* targaryenSigil.png in Resources */,
 				268F39AB1F17DD8F00F50F66 /* greyjoySigil.png in Resources */,
+				26A010DA1F291F0800C74369 /* starkSigil.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

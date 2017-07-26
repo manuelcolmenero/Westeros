@@ -25,46 +25,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.orange
         
-//        // Se crea el modelo
-//        let houses = Repository.local.houses
-//        
-//        // Se crean los controladores
-//        let navigatorC = UINavigationController()
-//        
-//        let dataSource = DataSources.houseDataSource(model: houses)
-//        let delegate   = Delegates.housesDelegate(model: houses, nav: navigatorC)
-//        
-//        
-//        let housesVC = ArrayTableViewController(dataSource: dataSource,
-//                                                delegate: delegate,
-//                                                title: "Westeros",
-//                                                style: .plain)
-//        
-//        navigatorC.pushViewController(housesVC, animated: true)
-//
-//        // Asignamos el RootVC
-//        window?.rootViewController = navigatorC
-
-        
         // Se crea el modelo
-        let seasons = RepositorySeasons.local.seasons
+        let houses = Repository.local.houses
         
         // Se crean los controladores
         let navigatorC = UINavigationController()
         
-        let dataSource = DataSources.seasonDataSource(model: seasons)
-        let delegate   = Delegates.seasonsDelegate(model: seasons, nav: navigatorC)
+        let dataSource = DataSources.houseDataSource(model: houses)
+        let delegate   = Delegates.housesDelegate(model: houses, nav: navigatorC)
         
         
-        let seasonsVC = ArrayTableViewController(dataSource: dataSource,
+        let housesVC = ArrayTableViewController(dataSource: dataSource,
                                                 delegate: delegate,
                                                 title: "Westeros",
                                                 style: .plain)
         
-        navigatorC.pushViewController(seasonsVC, animated: true)
-        
+        navigatorC.pushViewController(housesVC, animated: true)
+
         // Asignamos el RootVC
         window?.rootViewController = navigatorC
+
+        
+//        // Se crea el modelo
+//        let seasons = RepositorySeasons.local.seasons
+//        
+//        // Se crean los controladores
+//        let navigatorC = UINavigationController()
+//        
+//        let dataSource = DataSources.seasonDataSource(model: seasons)
+//        let delegate   = Delegates.seasonsDelegate(model: seasons, nav: navigatorC)
+//        
+//        
+//        let seasonsVC = ArrayTableViewController(dataSource: dataSource,
+//                                                delegate: delegate,
+//                                                title: "Westeros",
+//                                                style: .plain)
+//        
+//        navigatorC.pushViewController(seasonsVC, animated: true)
+//        
+//        // Asignamos el RootVC
+//        window?.rootViewController = navigatorC
         
         return true
     }
