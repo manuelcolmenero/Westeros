@@ -14,6 +14,8 @@ final class Repository {
     static let local = LocalFactory()
 }
 
+// Mark: - HouseFactory
+
 // Protocolo de crear casas independiente del canal
 protocol HouseFactory {
     
@@ -30,9 +32,10 @@ protocol HouseFactory {
     
 }
 
+// Mark: - LocalFactory
 // Función para crear modo local casas
 final class LocalFactory : HouseFactory {
-
+        
     var houses: [House]{
         get{
             // Aquí es donde se crean las casas
@@ -44,14 +47,23 @@ final class LocalFactory : HouseFactory {
             let greyjoyURL      = URL(string: "https://awoiaf.westeros.org/index.php/House_Greyjoy")!
             let targaryenURL    = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
             let tyrellURL       = URL(string: "https://awoiaf.westeros.org/index.php/House_Tyrell")!
+            let reedURL         = URL(string: "https://awoiaf.westeros.org/index.php/House_Reed")!
+            let gloverURL       = URL(string: "https://awoiaf.westeros.org/index.php/House_Glover")!
+            let tullyURL         = URL(string: "https://awoiaf.westeros.org/index.php/House_Tully")!
+            let tarlyURL         = URL(string: "https://awoiaf.westeros.org/index.php/House_Tarly")!
+            
             
             // Sigils
-            let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-            let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant lion")
-            let mormontSigil = Sigil(image: #imageLiteral(resourceName: "mormotSigil.png"), description: "Rampant bear")
+            let starkSigil = Sigil(image: #imageLiteral(resourceName: "starkSigil.png"), description: "Direwolf")
+            let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannisterSigil.png"), description: "Rampant lion")
+            let mormontSigil = Sigil(image: #imageLiteral(resourceName: "mormontSigil.png"), description: "Rampant bear")
             let greyjoySigil = Sigil(image: #imageLiteral(resourceName: "greyjoySigil.png"), description: "A golden kraken on a black field")
             let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSigil.png"), description: "A red three-headed dragon")
             let tyrellSigil = Sigil(image: #imageLiteral(resourceName: "tyrellSigil.png"), description: "A golden rose on a green field")
+            let reedSigil = Sigil(image: #imageLiteral(resourceName: "reedSigil.png"), description: "A black lizard-lion on grey-green")
+            let gloverSigil = Sigil(image: #imageLiteral(resourceName: "gloverSigil.png"), description: "A silver fist on scarlet")
+            let tullySigil = Sigil(image: #imageLiteral(resourceName: "tullySigil.png"), description: "A leaping silver trout on a field of blue and mud red")
+            let tarlySigil = Sigil(image: #imageLiteral(resourceName: "tarlySigil.png"), description: "Vert, a huntsman striding to dexter proper garbed gules")
             
             // Mayor Houses
             let stark       = House(name: "Stark",
@@ -83,16 +95,27 @@ final class LocalFactory : HouseFactory {
                                     url: mormontURL)
             
             // House Reed
+            let reed        = House(name: "Reed",
+                                    sigil: reedSigil,
+                                    words: "Hearth, heart and harvest",
+                                    url: reedURL)
             // House Glover
+            let glover      = House(name: "Glover",
+                                  sigil: gloverSigil,
+                                  words: "Sworn to stark",
+                                  url: gloverURL)
             // House Tully
-            
-            // ---- Lannister ----
-            // House Frey
-            // House Payne
+            let tully       = House(name: "Tully",
+                                    sigil: tullySigil,
+                                    words: "Family, Duty, Honor",
+                                    url: tullyURL)
             
             // ---- Tyrell ----
             // House Tarly
-            
+            let tarly       = House(name: "Tarly",
+                                    sigil: tarlySigil,
+                                    words: "First in Battle",
+                                    url: tarlyURL)
             // Characters
             // ---- Stark ----
             let robb    = Person(name: "Robb", alias: "The young wolf", house: stark)
@@ -149,9 +172,14 @@ final class LocalFactory : HouseFactory {
             // Add vassals in houses
             // ---- Stark ----
             stark.addMinorHouse(houses: mormont)
+            stark.addMinorHouse(houses: glover)
+            stark.addMinorHouse(houses: tully)
+            stark.addMinorHouse(houses: reed)
             
+            // ---- Tyrell ----
+            tyrell.addMinorHouse(houses: tarly)
             
-            return [stark, lannister, mormont, tyrell, greyjoy, targaryen].sorted()
+            return [stark, lannister, mormont, tyrell, greyjoy, targaryen, glover, tully, reed, tarly].sorted()
         }
     }
 
