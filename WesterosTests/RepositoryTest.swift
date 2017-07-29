@@ -13,12 +13,15 @@ class RepositoryTest: XCTestCase {
     // Se obtiene del repositorio la propiedad "houses"
     var houses = [House!]()
     
+    var seasons = [Season!]()
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // Se obtiene del repositorio la propiedad "houses"
         houses = Repository.local.houses
+        seasons = RepositorySeasons.local.seasons
         
     }
     

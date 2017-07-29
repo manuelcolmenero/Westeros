@@ -44,6 +44,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Asignamos el RootVC
         window?.rootViewController = navigatorC
+
+        
+//        // Se crea el modelo
+//        let seasons = RepositorySeasons.local.seasons
+//        
+//        // Se crean los controladores
+//        let navigatorC = UINavigationController()
+//        
+//        let dataSource = DataSources.seasonDataSource(model: seasons)
+//        let delegate   = Delegates.seasonsDelegate(model: seasons, nav: navigatorC)
+//        
+//        
+//        let seasonsVC = ArrayTableViewController(dataSource: dataSource,
+//                                                delegate: delegate,
+//                                                title: "Westeros",
+//                                                style: .plain)
+//        
+//        navigatorC.pushViewController(seasonsVC, animated: true)
+//        
+//        // Asignamos el RootVC
+//        window?.rootViewController = navigatorC
         
         return true
     }

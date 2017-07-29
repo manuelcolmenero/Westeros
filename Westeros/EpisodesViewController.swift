@@ -1,23 +1,24 @@
 //
-//  HousesViewController.swift
+//  EpisodesViewController.swift
 //  Westeros
 //
-//  Created by Manuel Colmenero Navarro on 17/7/17.
+//  Created by Manuel Colmenero Navarro on 23/7/17.
 //  Copyright © 2017 Manuel Colmenero Navarro. All rights reserved.
 //
 
 import UIKit
 
-class HousesViewController: UITableViewController {
-
-    // Propiedad para el modelo
-    let model : [House]
+class EpisodesViewController: UITableViewController {
+        
     
-    init (model: [House]) {
+    // Propiedad para el modelo
+    let model : [Episode]
+    
+    init (model: [Episode]) {
         self.model  = model
         super.init(nibName: nil, bundle: nil)
-
-        title       = "Houses"
+        
+        title       = "Episodes"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,35 +43,38 @@ class HousesViewController: UITableViewController {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Se crea el identificador de celda
-        let cellID = "HouseCell"
+        let cellID = "EpisodeCell"
         
         // Se averiguar cual es el objeto House que se ha de mostrar
-        let house = model[indexPath.row]
+        let episode = model[indexPath.row]
         
         // Crear una celda
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
         
         if cell == nil {
-            cell = UITableViewCell(style: .default,
+            cell = UITableViewCell(style: .subtitle,
                                    reuseIdentifier: cellID)
         }
         
-        // Sincronizar House -> Cell
-        cell?.imageView?.image  = house.sigil.image
-        cell?.textLabel?.text   = house.name
+        // Sincronizar Episode -> Cell
+        cell?.textLabel?.text = "Episode \(episode.numberInSeason) - \(episode.title)"
+        cell?.detailTextLabel?.text = "\(episode.count) members"
         
         return cell!
     }
     
-    
     // MARK: - Table View Controller
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        // Se averigua la celda 
-        let house   = model[indexPath.row]
+        // Se averigua la celda
+        let episode   = model[indexPath.row]
         
         // Se muestra la celda
-        let houseVC = HouseViewController(model: house)
-        navigationController?.pushViewController(houseVC, animated: true)
+        let membersVC = MembersViewController(model: episode.sortedMembers())
+        
+        // Se carga el wikiVC en el navigationController
+        navigationController?.pushViewController(membersVC,
+                                                 animated: true)
     }
+
 }
