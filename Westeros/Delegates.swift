@@ -29,8 +29,8 @@ final class Delegates{
         return ArrayTableViewDelegate(model: model,
                                       viewControllerMaker: { (season: Season) -> () in
                                         
-                                        let episodesVC =  EpisodesViewController(model: season.sortedChapters())
-                                        nav.pushViewController(episodesVC, animated: true)
+            let seasonVC =  SeasonViewController(model: season)
+            nav.pushViewController(seasonVC, animated: true)
         })
     }
 

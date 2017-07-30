@@ -44,8 +44,8 @@ class SeasonsViewController: UITableViewController {
         let season   = model[indexPath.row]
         
         // Se muestra la celda
-        let episodesVC = EpisodesViewController(model: season.sortedChapters())
-        navigationController?.pushViewController(episodesVC, animated: true)
+        let seasonVC = SeasonViewController(model: season)
+        navigationController?.pushViewController(seasonVC, animated: true)
         
     }
 
