@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.orange
         
+        // Se configura el diseño de la aplicación
+        ApparenceSetUp()
+        
         // Se crean los modelos
         let houses  = Repository.local.houses
         let seasons = Repository.local.seasons
@@ -57,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 title: "Seasons",
                                                 style: .plain)
         
+        
         navSeason.pushViewController(seasonsVC, animated: true)
         
         // Se crea el UITabBarController
@@ -64,10 +68,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tbController = UITabBarController()
         tbController.viewControllers = [navHouse, navSeason]
         
+        
         // Asignamos el RootVC
         window?.rootViewController = tbController
         
         return true
+    }
+    
+    
+    // Mark: - Configuration Apparence
+    func ApparenceSetUp() {
+
+        
+        UINavigationBar.appearance().tintColor        = UIColor.white
+        UINavigationBar.appearance().barStyle         = UIBarStyle.black
+        UINavigationBar.appearance().barTintColor     = UIColor.black
+        
+        // Configuración del componente
+        UITabBar.appearance().barTintColor            = UIColor.black
+        UITabBar.appearance().tintColor               = UIColor.white
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
