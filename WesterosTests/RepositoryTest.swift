@@ -21,7 +21,7 @@ class RepositoryTest: XCTestCase {
         
         // Se obtiene del repositorio la propiedad "houses"
         houses = Repository.local.houses
-        seasons = RepositorySeasons.local.seasons
+        seasons = Repository.local.seasons
         
     }
     
@@ -43,7 +43,7 @@ class RepositoryTest: XCTestCase {
         XCTAssertNotNil(houses)
         
         // Se verifica el número de registros que se han recibido
-        XCTAssertEqual(houses.count, 6)
+        XCTAssertEqual(houses.count, 10)
     }
 
     // Se crea un test para verificar el sistema de ordenación

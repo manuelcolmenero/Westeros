@@ -12,14 +12,22 @@ import UIKit
 typealias Chapters = Set<Episode>
 
 final class Season{
-    let number         : Int
-    let dateRelease    : String
-    let dateFinish     : String
+    let name           : String
+    let dateRelease    : Date
+    let dateFinish     : Date
     
     private var _chapters : Chapters
     
-    init(number: Int, dateRelease: String, dateFinish: String) {
-        (self.number, self.dateRelease, self.dateFinish) = (number, dateRelease, dateFinish)
+    init(name: String, dateRelease: String, dateFinish: String) {
+        self.name        = name
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        self.dateRelease = formatter.date(from: dateRelease)!
+        self.dateFinish  = formatter.date(from: dateFinish)!
+        
+        
         _chapters = Chapters()
     }
 }
@@ -35,7 +43,7 @@ extension Season{
     // Extension de método
     func add(episode: Episode) {
         
-        guard episode.season.number == number else {
+        guard episode.season.name == name else {
             return
         }
         
@@ -72,15 +80,15 @@ extension Season {
     // Variable para igualdad de objetos
     var proxyForEquality: String {
         get {
-            return "\(number)"
+            return "\(name.uppercased())"
         }
     }
     
     
     // Variable para ordenar objetos
-    var proxyForComparison: Int {
+    var proxyForComparison: String {
         get {
-            return number
+            return "\(name.uppercased())"
         }
     }
 }
@@ -105,5 +113,12 @@ extension Season: Equatable {
 extension Season: Comparable {
     static func <(lhs: Season, rhs: Season) -> Bool {
         return lhs.proxyForComparison < rhs.proxyForComparison
+    }
+}
+
+// MART: - CustomStringConvertible
+extension Season : CustomStringConvertible {
+    var description: String {
+        return "\(name)"
     }
 }

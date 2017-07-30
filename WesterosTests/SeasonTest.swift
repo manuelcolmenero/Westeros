@@ -27,12 +27,13 @@ class SeasonTest: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
 
-        season1      = Season(number: 1, dateRelease: "2011-04-17", dateFinish: "2011-06-19")
+        season1      = Season(name: "Season 1", dateRelease: "2011-04-17", dateFinish: "2011-06-19")
+
         episode1x01  = Episode(numberOvervall: 1, numberInSeason: 1, title: "Winter Is Coming", season: season1)
         episode1x02  = Episode(numberOvervall: 2, numberInSeason: 2, title: "The Kingsroad", season: season1)
         episode1x03  = Episode(numberOvervall: 3, numberInSeason: 3, title: "Lord Snow", season: season1)
         
-        season2      = Season(number: 2, dateRelease: "2012-04-01", dateFinish: "2012-06-03")
+        season2      = Season(name: "Season 2", dateRelease: "2012-04-01", dateFinish: "2012-06-03")
         episode2x01  = Episode(numberOvervall: 11, numberInSeason: 1, title: "The North Remembers", season: season2)
         episode2x02  = Episode(numberOvervall: 12, numberInSeason: 2, title: "The Night Lands", season: season2)
         episode2x03  = Episode(numberOvervall: 13, numberInSeason: 3, title: "What Is Dead May Never Die", season: season2)
@@ -53,14 +54,12 @@ class SeasonTest: XCTestCase {
     }
     
     // Caso de test para añadir "Episodes" a "Seasons"
-    func testAddChapters(){
+    func testAddEpisodes(){
         // Se verifica cuantos Episodes hay en Season1
         XCTAssertEqual(season1.count, 0)
         
         season1.add(episodes: episode1x01)
         XCTAssertEqual(season1.count, 1)
-        
-        
     }
     
     func testEquality() {
@@ -88,4 +87,7 @@ class SeasonTest: XCTestCase {
         XCTAssertLessThan(season1, season2)
     }
     
+//    func testCustomStringConvertible() {
+//        XCTAssertEqual(season1.description, "Season 1")
+//    }
 }

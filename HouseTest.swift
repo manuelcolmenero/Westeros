@@ -97,10 +97,10 @@ class HouseTest: XCTestCase {
     }
     
     func testAddMinorHouse() {
-        XCTAssertEqual(starkHouse.countMinorHouse, 1)
+        XCTAssertEqual(starkHouse.countMinorHouse, 4)
         starkHouse.addMinorHouse(house: mormontHouse)
         
-        XCTAssertEqual(starkHouse.countMinorHouse, 1)
+        XCTAssertEqual(starkHouse.countMinorHouse, 4)
     }
     
     func testEquality() {

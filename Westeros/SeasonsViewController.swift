@@ -36,29 +36,6 @@ class SeasonsViewController: UITableViewController {
         return model.count
     }
     
-//    override func tableView(_ tableView: UITableView,
-//                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        // Se crea el identificador de celda
-//        let cellID = "SeasonCell"
-//        
-//        // Se averiguar cual es el objeto House que se ha de mostrar
-//        let season = model[indexPath.row]
-//        
-//        // Crear una celda
-//        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-//        
-//        if cell == nil {
-//            cell = UITableViewCell(style: .default,
-//                                   reuseIdentifier: cellID)
-//        }
-//        
-//        // Sincronizar Season -> Cell
-//        cell?.textLabel?.text   = "Season \(season.number)"
-//        
-//        return cell!
-//    }
-    
     
     // MARK: - Table View Controller
     override func tableView(_ tableView: UITableView,

@@ -67,7 +67,7 @@ extension Episode{
 // MART: - Propiedades
 extension Episode {
     var proxy : String {
-        return "\(numberOvervall) \(numberInSeason) \(season.number)"
+        return "\(numberOvervall) \(numberInSeason) \(season.name)"
     }
 }
 
