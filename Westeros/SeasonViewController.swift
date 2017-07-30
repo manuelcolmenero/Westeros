@@ -10,8 +10,6 @@ import UIKit
 
 class SeasonViewController: UIViewController {
 
-    @IBOutlet weak var seasonNameView: UILabel!
-    
     @IBOutlet weak var seasonDateReleaseView: UILabel!
     
     @IBOutlet weak var seasonDateFinish: UILabel!
@@ -78,7 +76,6 @@ class SeasonViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         
         // model -> view
-        seasonNameView.text          = model.name
         seasonDateReleaseView.text   = formatter.string(from: model.dateRelease)
         seasonDateFinish.text        = formatter.string(from: model.dateFinish)
         seasonSynopsisView.text      = model.synopsis

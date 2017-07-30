@@ -13,15 +13,24 @@ import UIKit
 typealias CharInEpisode = Set<Person>
 
 final class Episode{
+    let name              : String
     let numberOvervall    : Int
     let numberInSeason    : Int
     let title             : String
     let season            : Season
+    let synopsis          : String
+    let dateRelease       : Date
     
     private var _members : CharInEpisode
     
-    init(numberOvervall: Int, numberInSeason: Int, title: String, season: Season) {
-        (self.numberOvervall, self.numberInSeason, self.title, self.season) = (numberOvervall, numberInSeason, title, season)
+    init(name: String, dateRelease: String, numberOvervall: Int, numberInSeason: Int, title: String, season: Season, synopsis: String) {
+        (self.name, self.numberOvervall, self.numberInSeason, self.title, self.season, self.synopsis) = (name, numberOvervall, numberInSeason, title, season, synopsis)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        self.dateRelease = formatter.date(from: dateRelease)!
+        
         _members = CharInEpisode()
     }
 }
@@ -67,7 +76,11 @@ extension Episode{
 // MART: - Propiedades
 extension Episode {
     var proxy : String {
-        return "\(numberOvervall) \(numberInSeason) \(season.name)"
+        return "\(name) \(title)"
+    }
+    
+    var proxyForComparison : Date{
+        return dateRelease
     }
 }
 
@@ -90,6 +103,13 @@ extension Episode : Equatable {
 // MART: - Comparable
 extension Episode: Comparable {
     static func <(lhs: Episode, rhs: Episode) -> Bool {
-        return lhs.proxy < rhs.proxy
+        return lhs.proxyForComparison < rhs.proxyForComparison
+    }
+}
+
+// MART: - CustomStringConvertible
+extension Episode : CustomStringConvertible {
+    var description: String {
+        return "\(name)"
     }
 }

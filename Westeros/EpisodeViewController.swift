@@ -14,6 +14,8 @@ class EpisodeViewController: UIViewController {
 
     @IBOutlet weak var episodeNumberInSeasonView: UILabel!
     
+    @IBOutlet weak var episodeSynopsisView: UILabel!
+    
     let model : Episode
     
     init(model: Episode) {
@@ -73,6 +75,7 @@ class EpisodeViewController: UIViewController {
         // model -> view
         episodeNumberOvervallView.text   = "\(model.numberOvervall)"
         episodeNumberInSeasonView.text   = "\(model.numberInSeason)"
+        episodeSynopsisView.text         = model.synopsis
     }
 
 }
