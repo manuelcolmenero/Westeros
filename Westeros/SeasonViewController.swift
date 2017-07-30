@@ -16,6 +16,8 @@ class SeasonViewController: UIViewController {
     
     @IBOutlet weak var seasonDateFinish: UILabel!
     
+    @IBOutlet weak var seasonSynopsisView: UILabel!
+    
     let model : Season
     
     init(model: Season) {
@@ -79,5 +81,6 @@ class SeasonViewController: UIViewController {
         seasonNameView.text          = model.name
         seasonDateReleaseView.text   = formatter.string(from: model.dateRelease)
         seasonDateFinish.text        = formatter.string(from: model.dateFinish)
+        seasonSynopsisView.text      = model.synopsis
     }
 }

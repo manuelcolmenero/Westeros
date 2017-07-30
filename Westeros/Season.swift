@@ -15,11 +15,13 @@ final class Season{
     let name           : String
     let dateRelease    : Date
     let dateFinish     : Date
+    let synopsis       : String
     
     private var _chapters : Chapters
     
-    init(name: String, dateRelease: String, dateFinish: String) {
+    init(name: String, dateRelease: String, dateFinish: String, synopsis: String) {
         self.name        = name
+        self.synopsis    = synopsis
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"

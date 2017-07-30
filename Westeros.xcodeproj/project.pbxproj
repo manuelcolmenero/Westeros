@@ -230,6 +230,8 @@
 				26A404F91F1EAB4E00BEE379 /* Generics */,
 				26CA5E581F24E51B00FAE465 /* EpisodesViewController.swift */,
 				26CA5E591F24E51B00FAE465 /* EpisodesViewController.xib */,
+				2692C1E81F2E28BC00BF4CC8 /* EpisodeViewController.swift */,
+				2692C1E91F2E28BC00BF4CC8 /* EpisodeViewController.xib */,
 				26DE6DEB1F1D666F00A10897 /* HousesViewController.swift */,
 				26DE6DEC1F1D666F00A10897 /* HousesViewController.xib */,
 				26832F581F14128F00CB7CEF /* HouseViewController.swift */,
@@ -244,8 +246,6 @@
 				2692C1E51F2E223E00BF4CC8 /* SeasonViewController.xib */,
 				26DE6DE31F1D4A2300A10897 /* WikiViewController.swift */,
 				26DE6DE41F1D4A2300A10897 /* WikiViewController.xib */,
-				2692C1E81F2E28BC00BF4CC8 /* EpisodeViewController.swift */,
-				2692C1E91F2E28BC00BF4CC8 /* EpisodeViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

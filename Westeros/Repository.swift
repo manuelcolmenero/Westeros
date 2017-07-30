@@ -205,13 +205,34 @@ final class LocalFactory : HouseFactory {
             }
             
             // Aquí es donde se crean las temporadas
-            let season1      = Season(name: "Season 1", dateRelease: "2011-04-17", dateFinish: "2011-06-19")
-            let season2      = Season(name: "Season 2", dateRelease: "2012-04-01", dateFinish: "2012-06-03")
-            let season3      = Season(name: "Season 3", dateRelease: "2013-03-31", dateFinish: "2013-06-09")
-            let season4      = Season(name: "Season 4", dateRelease: "2014-04-06", dateFinish: "2014-06-15")
-            let season5      = Season(name: "Season 5", dateRelease: "2015-04-12", dateFinish: "2015-06-14")
-            let season6      = Season(name: "Season 6", dateRelease: "2016-04-24", dateFinish: "2016-06-26")
-            let season7      = Season(name: "Season 7", dateRelease: "2017-07-16", dateFinish: "2017-08-27")
+            let season1      = Season(name: "Season 1",
+                                      dateRelease: "2011-04-17",
+                                      dateFinish: "2011-06-19",
+                                      synopsis: "Season 1 spans a period of several months on a world where the seasons last for years at a time. The action begins in the unified Seven Kingdoms of Westeros as the long summer ends and winter draws near. Lord Eddard Stark is asked by his old friend, King Robert Baratheon, to serve as the Hand of the King following the death of the previous incumbent, Eddard's mentor Jon Arryn. Eddard is reluctant, but receives intelligence suggesting that Jon was murdered. Eddard accepts Robert's offer, planning to use his position and authority to investigate the alleged murder.")
+            let season2      = Season(name: "Season 2",
+                                      dateRelease: "2012-04-01",
+                                      dateFinish: "2012-06-03",
+                                      synopsis: "Season 2 spans several months on a world where the seasons last for years at a time. The Seven Kingdoms are at war, with the King in the North, Robb Stark, fighting to win independence for his people and those of the Riverlands. Robb decides that he must win the allegiance of the fiercely independent ironborn to his cause, and sends his best friend Theon Greyjoy to treat with his father, who is hatching plans of his own. Meanwhile, Joffrey Baratheon holds the Iron Throne with the backing of the powerful House Lannister, but his uncle Renly has also claimed the throne with the support of House Tyrell, whose armies are much larger. As they struggle for the throne, Tyrion Lannister arrives in King's Landing to take matters in hand, only to face opposition from his scheming sister, Cersei, now the Queen Regent.")
+            let season3      = Season(name: "Season 3",
+                                      dateRelease: "2013-03-31",
+                                      dateFinish: "2013-06-09",
+                                      synopsis: "Season 3 spans several months on a world where the seasons can last for years at a time. Autumn has fallen across the world, with winter not far behind. The people should be preparing for years of snow and ice, but the Seven Kingdoms of Westeros instead remain gripped by civil war. Would-be king Renly Baratheon has been assassinated, altering the alliances in the war. The cruel boy-king Joffrey Baratheon has won a great victory by securing an alliance with House Tyrell, with his supporters defeating his uncle Stannis in an epic battle. Joffrey now commands the largest armies in the realm and his triumph appears inevitable.")
+            let season4      = Season(name: "Season 4",
+                                      dateRelease: "2014-04-06",
+                                      dateFinish: "2014-06-15",
+                                      synopsis: "The War of the Five Kings is drawing to a close, but new intrigues and plots are in motion, and the surviving factions must contend with enemies not only outside their ranks, but within.")
+            let season5      = Season(name: "Season 5",
+                                      dateRelease: "2015-04-12",
+                                      dateFinish: "2015-06-14",
+                                      synopsis: "The War of the Five Kings, once thought to be drawing to a close, is instead entering a new and more chaotic phase. Westeros is on the brink of collapse, and many are seizing what they can while the realm implodes, like a corpse making a feast for crows.")
+            let season6      = Season(name: "Season 6",
+                                      dateRelease: "2016-04-24",
+                                      dateFinish: "2016-06-26",
+                                      synopsis: "Westeros braces for a winter which may become a new Long Night, as the White Walkers and their army of the dead are poised to strike against the Wall and the realms of men.")
+            let season7      = Season(name: "Season 7",
+                                      dateRelease: "2017-07-16",
+                                      dateFinish: "2017-08-27",
+                                      synopsis: "After a summer lasting almost ten years, the words of House Stark have finally become reality once again: winter is here.")
             
             var arrayEpisodes = [Episode]()
             
