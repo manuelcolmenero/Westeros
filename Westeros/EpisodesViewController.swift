@@ -57,8 +57,8 @@ class EpisodesViewController: UITableViewController {
         }
         
         // Sincronizar Episode -> Cell
-        cell?.textLabel?.text = "Episode \(episode.numberInSeason) - \(episode.title)"
-        cell?.detailTextLabel?.text = "\(episode.count) members"
+        cell?.textLabel?.text = "\(episode.name) - \(episode.title)"
+        cell?.detailTextLabel?.text = "\(episode.synopsis)"
         
         return cell!
     }
@@ -70,7 +70,7 @@ class EpisodesViewController: UITableViewController {
         let episode   = model[indexPath.row]
         
         // Se muestra la celda
-        let membersVC = MembersViewController(model: episode.sortedMembers())
+        let membersVC = EpisodeViewController(model: episode)
         
         // Se carga el wikiVC en el navigationController
         navigationController?.pushViewController(membersVC,

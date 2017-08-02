@@ -25,48 +25,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.orange
         
-        // Se crea el modelo
-        let houses = Repository.local.houses
+        // Se configura el diseño de la aplicación
+        ApparenceSetUp()
+        
+        // Se crean los modelos
+        let houses  = Repository.local.houses
+        let seasons = Repository.local.seasons
         
         // Se crean los controladores
-        let navigatorC = UINavigationController()
         
-        let dataSource = DataSources.houseDataSource(model: houses)
-        let delegate   = Delegates.housesDelegate(model: houses, nav: navigatorC)
+        // Controlador House
+        let navHouse = UINavigationController()
+        
+        let dataSourceHouse = DataSources.houseDataSource(model: houses)
+        let delegateHouse   = Delegates.housesDelegate(model: houses, nav: navHouse)
         
         
-        let housesVC = ArrayTableViewController(dataSource: dataSource,
-                                                delegate: delegate,
-                                                title: "Westeros",
+        let housesVC = ArrayTableViewController(dataSource: dataSourceHouse,
+                                                delegate: delegateHouse,
+                                                title: "Houses",
                                                 style: .plain)
         
-        navigatorC.pushViewController(housesVC, animated: true)
+        navHouse.pushViewController(housesVC, animated: true)
 
-        // Asignamos el RootVC
-        window?.rootViewController = navigatorC
-
+        // Controlador Season
+        let navSeason = UINavigationController()
         
-//        // Se crea el modelo
-//        let seasons = RepositorySeasons.local.seasons
-//        
-//        // Se crean los controladores
-//        let navigatorC = UINavigationController()
-//        
-//        let dataSource = DataSources.seasonDataSource(model: seasons)
-//        let delegate   = Delegates.seasonsDelegate(model: seasons, nav: navigatorC)
-//        
-//        
-//        let seasonsVC = ArrayTableViewController(dataSource: dataSource,
-//                                                delegate: delegate,
-//                                                title: "Westeros",
-//                                                style: .plain)
-//        
-//        navigatorC.pushViewController(seasonsVC, animated: true)
-//        
-//        // Asignamos el RootVC
-//        window?.rootViewController = navigatorC
+        let dataSourceSeason = DataSources.seasonDataSource(model: seasons)
+        let delegateSeason   = Delegates.seasonsDelegate(model: seasons, nav: navSeason)
+        
+        
+        let seasonsVC = ArrayTableViewController(dataSource: dataSourceSeason,
+                                                delegate: delegateSeason,
+                                                title: "Seasons",
+                                                style: .plain)
+        
+        
+        navSeason.pushViewController(seasonsVC, animated: true)
+        
+        // Se crea el UITabBarController
+        
+        let tbController = UITabBarController()
+        tbController.viewControllers = [navHouse, navSeason]
+        
+        
+        // Asignamos el RootVC
+        window?.rootViewController = tbController
         
         return true
+    }
+    
+    
+    // Mark: - Configuration Apparence
+    func ApparenceSetUp() {
+
+        
+        UINavigationBar.appearance().tintColor        = UIColor.white
+        UINavigationBar.appearance().barStyle         = UIBarStyle.black
+        UINavigationBar.appearance().barTintColor     = UIColor.black
+        
+        // Configuración del componente
+        UITabBar.appearance().barTintColor            = UIColor.black
+        UITabBar.appearance().tintColor               = UIColor.white
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

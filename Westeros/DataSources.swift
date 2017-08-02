@@ -56,7 +56,7 @@ final class DataSources{
                 cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
             }
             
-            cell?.textLabel?.text = "Season \(season.number)"
+            cell?.textLabel?.text = "\(season.name)"
             cell?.detailTextLabel?.text = "\(season.count) episodes"
             
             

@@ -49,7 +49,7 @@ class EpisodeTest: XCTestCase {
         arya    = Person(name: "Arya", house: starkHouse)
         tyrion  = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
         
-        season1      = Season(number: 1, dateRelease: "2011-04-17", dateFinish: "2011-06-19")
+        season1      = Season(name: "Season 1", dateRelease: "2011-04-17", dateFinish: "2011-06-19")
         episode1x01  = Episode(numberOvervall: 1, numberInSeason: 1, title: "Winter Is Coming", season: season1)
         episode1x02  = Episode(numberOvervall: 2, numberInSeason: 2, title: "The Kingsroad", season: season1)
         
@@ -65,7 +65,7 @@ class EpisodeTest: XCTestCase {
     }
     
     
-    func testPersonExistence() {
+    func testEpisodeExistence() {
         XCTAssertNotNil(episode1x01)
     }
     
@@ -84,4 +84,13 @@ class EpisodeTest: XCTestCase {
         
     }
     
+    func testEpisodeHashable() {
+        XCTAssertNotNil(episode1x01.hashValue)
+    }
+    
+    
+    func testEpisodeComparison() {
+        // Se comprueba si un objeto es mayor que otro
+        XCTAssertLessThan(episode1x01, episode1x02)
+    }
 }

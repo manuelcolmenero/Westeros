@@ -36,33 +36,6 @@ class HousesViewController: UITableViewController {
         return model.count
     }
     
-    
-    
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // Se crea el identificador de celda
-        let cellID = "HouseCell"
-        
-        // Se averiguar cual es el objeto House que se ha de mostrar
-        let house = model[indexPath.row]
-        
-        // Crear una celda
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-        
-        if cell == nil {
-            cell = UITableViewCell(style: .default,
-                                   reuseIdentifier: cellID)
-        }
-        
-        // Sincronizar House -> Cell
-        cell?.imageView?.image  = house.sigil.image
-        cell?.textLabel?.text   = house.name
-        
-        return cell!
-    }
-    
-    
     // MARK: - Table View Controller
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
