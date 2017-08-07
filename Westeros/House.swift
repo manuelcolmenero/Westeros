@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// Representación del módelo
+// Representación del modelo
 // MARK: - typealias
 typealias Words = String
 
